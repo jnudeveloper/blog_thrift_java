@@ -12,41 +12,41 @@ public class PostService {
 
   public interface Iface {
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> find(com.jnudeveloper.blog.thriftgen.domain.TQuery query) throws org.apache.thrift.TException;
+    public int ping(int seq) throws org.apache.thrift.TException;
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> findAll() throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response findAll(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost findById(int id) throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response findById(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult create(com.jnudeveloper.blog.thriftgen.domain.TPost post) throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response create(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult createWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response createWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult update(com.jnudeveloper.blog.thriftgen.domain.TPost post) throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response update(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult updateWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response updateWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult deleteById(int id) throws org.apache.thrift.TException;
+    public com.jnudeveloper.blog.thriftgen.domain.Response deleteById(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException;
 
   }
 
   public interface AsyncIface {
 
-    public void find(com.jnudeveloper.blog.thriftgen.domain.TQuery query, org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler) throws org.apache.thrift.TException;
+    public void ping(int seq, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void findAll(org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler) throws org.apache.thrift.TException;
+    public void findAll(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
-    public void findById(int id, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TPost> resultHandler) throws org.apache.thrift.TException;
+    public void findById(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
-    public void create(com.jnudeveloper.blog.thriftgen.domain.TPost post, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException;
+    public void create(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
-    public void createWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException;
+    public void createWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
-    public void update(com.jnudeveloper.blog.thriftgen.domain.TPost post, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException;
+    public void update(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
-    public void updateWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException;
+    public void updateWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
-    public void deleteById(int id, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException;
+    public void deleteById(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -70,42 +70,43 @@ public class PostService {
       super(iprot, oprot);
     }
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> find(com.jnudeveloper.blog.thriftgen.domain.TQuery query) throws org.apache.thrift.TException
+    public int ping(int seq) throws org.apache.thrift.TException
     {
-      send_find(query);
-      return recv_find();
+      send_ping(seq);
+      return recv_ping();
     }
 
-    public void send_find(com.jnudeveloper.blog.thriftgen.domain.TQuery query) throws org.apache.thrift.TException
+    public void send_ping(int seq) throws org.apache.thrift.TException
     {
-      find_args args = new find_args();
-      args.setQuery(query);
-      sendBase("find", args);
+      ping_args args = new ping_args();
+      args.setSeq(seq);
+      sendBase("ping", args);
     }
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> recv_find() throws org.apache.thrift.TException
+    public int recv_ping() throws org.apache.thrift.TException
     {
-      find_result result = new find_result();
-      receiveBase(result, "find");
+      ping_result result = new ping_result();
+      receiveBase(result, "ping");
       if (result.isSetSuccess()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "find failed: unknown result");
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "ping failed: unknown result");
     }
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> findAll() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response findAll(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_findAll();
+      send_findAll(req);
       return recv_findAll();
     }
 
-    public void send_findAll() throws org.apache.thrift.TException
+    public void send_findAll(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       findAll_args args = new findAll_args();
+      args.setReq(req);
       sendBase("findAll", args);
     }
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> recv_findAll() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_findAll() throws org.apache.thrift.TException
     {
       findAll_result result = new findAll_result();
       receiveBase(result, "findAll");
@@ -115,20 +116,20 @@ public class PostService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "findAll failed: unknown result");
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost findById(int id) throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response findById(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_findById(id);
+      send_findById(req);
       return recv_findById();
     }
 
-    public void send_findById(int id) throws org.apache.thrift.TException
+    public void send_findById(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       findById_args args = new findById_args();
-      args.setId(id);
+      args.setReq(req);
       sendBase("findById", args);
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost recv_findById() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_findById() throws org.apache.thrift.TException
     {
       findById_result result = new findById_result();
       receiveBase(result, "findById");
@@ -138,20 +139,20 @@ public class PostService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "findById failed: unknown result");
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult create(com.jnudeveloper.blog.thriftgen.domain.TPost post) throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response create(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_create(post);
+      send_create(req);
       return recv_create();
     }
 
-    public void send_create(com.jnudeveloper.blog.thriftgen.domain.TPost post) throws org.apache.thrift.TException
+    public void send_create(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       create_args args = new create_args();
-      args.setPost(post);
+      args.setReq(req);
       sendBase("create", args);
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult recv_create() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_create() throws org.apache.thrift.TException
     {
       create_result result = new create_result();
       receiveBase(result, "create");
@@ -161,21 +162,20 @@ public class PostService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "create failed: unknown result");
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult createWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response createWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_createWithTags(post, tagList);
+      send_createWithTags(req);
       return recv_createWithTags();
     }
 
-    public void send_createWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) throws org.apache.thrift.TException
+    public void send_createWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       createWithTags_args args = new createWithTags_args();
-      args.setPost(post);
-      args.setTagList(tagList);
+      args.setReq(req);
       sendBase("createWithTags", args);
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult recv_createWithTags() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_createWithTags() throws org.apache.thrift.TException
     {
       createWithTags_result result = new createWithTags_result();
       receiveBase(result, "createWithTags");
@@ -185,20 +185,20 @@ public class PostService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "createWithTags failed: unknown result");
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult update(com.jnudeveloper.blog.thriftgen.domain.TPost post) throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response update(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_update(post);
+      send_update(req);
       return recv_update();
     }
 
-    public void send_update(com.jnudeveloper.blog.thriftgen.domain.TPost post) throws org.apache.thrift.TException
+    public void send_update(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       update_args args = new update_args();
-      args.setPost(post);
+      args.setReq(req);
       sendBase("update", args);
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult recv_update() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_update() throws org.apache.thrift.TException
     {
       update_result result = new update_result();
       receiveBase(result, "update");
@@ -208,21 +208,20 @@ public class PostService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "update failed: unknown result");
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult updateWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response updateWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_updateWithTags(post, tagList);
+      send_updateWithTags(req);
       return recv_updateWithTags();
     }
 
-    public void send_updateWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) throws org.apache.thrift.TException
+    public void send_updateWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       updateWithTags_args args = new updateWithTags_args();
-      args.setPost(post);
-      args.setTagList(tagList);
+      args.setReq(req);
       sendBase("updateWithTags", args);
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult recv_updateWithTags() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_updateWithTags() throws org.apache.thrift.TException
     {
       updateWithTags_result result = new updateWithTags_result();
       receiveBase(result, "updateWithTags");
@@ -232,20 +231,20 @@ public class PostService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "updateWithTags failed: unknown result");
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult deleteById(int id) throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response deleteById(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
-      send_deleteById(id);
+      send_deleteById(req);
       return recv_deleteById();
     }
 
-    public void send_deleteById(int id) throws org.apache.thrift.TException
+    public void send_deleteById(com.jnudeveloper.blog.thriftgen.domain.Request req) throws org.apache.thrift.TException
     {
       deleteById_args args = new deleteById_args();
-      args.setId(id);
+      args.setReq(req);
       sendBase("deleteById", args);
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult recv_deleteById() throws org.apache.thrift.TException
+    public com.jnudeveloper.blog.thriftgen.domain.Response recv_deleteById() throws org.apache.thrift.TException
     {
       deleteById_result result = new deleteById_result();
       receiveBase(result, "deleteById");
@@ -273,58 +272,61 @@ public class PostService {
       super(protocolFactory, clientManager, transport);
     }
 
-    public void find(com.jnudeveloper.blog.thriftgen.domain.TQuery query, org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler) throws org.apache.thrift.TException {
+    public void ping(int seq, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      find_call method_call = new find_call(query, resultHandler, this, ___protocolFactory, ___transport);
+      ping_call method_call = new ping_call(seq, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class find_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> {
-      private com.jnudeveloper.blog.thriftgen.domain.TQuery query;
-      public find_call(com.jnudeveloper.blog.thriftgen.domain.TQuery query, org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class ping_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
+      private int seq;
+      public ping_call(int seq, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.query = query;
+        this.seq = seq;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("find", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        find_args args = new find_args();
-        args.setQuery(query);
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("ping", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        ping_args args = new ping_args();
+        args.setSeq(seq);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_find();
+        return (new Client(prot)).recv_ping();
       }
     }
 
-    public void findAll(org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler) throws org.apache.thrift.TException {
+    public void findAll(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      findAll_call method_call = new findAll_call(resultHandler, this, ___protocolFactory, ___transport);
+      findAll_call method_call = new findAll_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class findAll_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> {
-      public findAll_call(org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class findAll_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public findAll_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("findAll", org.apache.thrift.protocol.TMessageType.CALL, 0));
         findAll_args args = new findAll_args();
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -334,29 +336,29 @@ public class PostService {
       }
     }
 
-    public void findById(int id, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TPost> resultHandler) throws org.apache.thrift.TException {
+    public void findById(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      findById_call method_call = new findById_call(id, resultHandler, this, ___protocolFactory, ___transport);
+      findById_call method_call = new findById_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class findById_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.TPost> {
-      private int id;
-      public findById_call(int id, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TPost> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class findById_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public findById_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.id = id;
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("findById", org.apache.thrift.protocol.TMessageType.CALL, 0));
         findById_args args = new findById_args();
-        args.setId(id);
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public com.jnudeveloper.blog.thriftgen.domain.TPost getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -366,29 +368,29 @@ public class PostService {
       }
     }
 
-    public void create(com.jnudeveloper.blog.thriftgen.domain.TPost post, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
+    public void create(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      create_call method_call = new create_call(post, resultHandler, this, ___protocolFactory, ___transport);
+      create_call method_call = new create_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class create_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
-      private com.jnudeveloper.blog.thriftgen.domain.TPost post;
-      public create_call(com.jnudeveloper.blog.thriftgen.domain.TPost post, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class create_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public create_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.post = post;
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("create", org.apache.thrift.protocol.TMessageType.CALL, 0));
         create_args args = new create_args();
-        args.setPost(post);
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -398,32 +400,29 @@ public class PostService {
       }
     }
 
-    public void createWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
+    public void createWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      createWithTags_call method_call = new createWithTags_call(post, tagList, resultHandler, this, ___protocolFactory, ___transport);
+      createWithTags_call method_call = new createWithTags_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class createWithTags_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
-      private com.jnudeveloper.blog.thriftgen.domain.TPost post;
-      private java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList;
-      public createWithTags_call(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class createWithTags_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public createWithTags_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.post = post;
-        this.tagList = tagList;
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("createWithTags", org.apache.thrift.protocol.TMessageType.CALL, 0));
         createWithTags_args args = new createWithTags_args();
-        args.setPost(post);
-        args.setTagList(tagList);
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -433,29 +432,29 @@ public class PostService {
       }
     }
 
-    public void update(com.jnudeveloper.blog.thriftgen.domain.TPost post, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
+    public void update(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      update_call method_call = new update_call(post, resultHandler, this, ___protocolFactory, ___transport);
+      update_call method_call = new update_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class update_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
-      private com.jnudeveloper.blog.thriftgen.domain.TPost post;
-      public update_call(com.jnudeveloper.blog.thriftgen.domain.TPost post, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class update_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public update_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.post = post;
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("update", org.apache.thrift.protocol.TMessageType.CALL, 0));
         update_args args = new update_args();
-        args.setPost(post);
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -465,32 +464,29 @@ public class PostService {
       }
     }
 
-    public void updateWithTags(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
+    public void updateWithTags(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      updateWithTags_call method_call = new updateWithTags_call(post, tagList, resultHandler, this, ___protocolFactory, ___transport);
+      updateWithTags_call method_call = new updateWithTags_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class updateWithTags_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
-      private com.jnudeveloper.blog.thriftgen.domain.TPost post;
-      private java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList;
-      public updateWithTags_call(com.jnudeveloper.blog.thriftgen.domain.TPost post, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class updateWithTags_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public updateWithTags_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.post = post;
-        this.tagList = tagList;
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("updateWithTags", org.apache.thrift.protocol.TMessageType.CALL, 0));
         updateWithTags_args args = new updateWithTags_args();
-        args.setPost(post);
-        args.setTagList(tagList);
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -500,29 +496,29 @@ public class PostService {
       }
     }
 
-    public void deleteById(int id, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
+    public void deleteById(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      deleteById_call method_call = new deleteById_call(id, resultHandler, this, ___protocolFactory, ___transport);
+      deleteById_call method_call = new deleteById_call(req, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class deleteById_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
-      private int id;
-      public deleteById_call(int id, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class deleteById_call extends org.apache.thrift.async.TAsyncMethodCall<com.jnudeveloper.blog.thriftgen.domain.Response> {
+      private com.jnudeveloper.blog.thriftgen.domain.Request req;
+      public deleteById_call(com.jnudeveloper.blog.thriftgen.domain.Request req, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
-        this.id = id;
+        this.req = req;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("deleteById", org.apache.thrift.protocol.TMessageType.CALL, 0));
         deleteById_args args = new deleteById_args();
-        args.setId(id);
+        args.setReq(req);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getResult() throws org.apache.thrift.TException {
+      public com.jnudeveloper.blog.thriftgen.domain.Response getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -545,7 +541,7 @@ public class PostService {
     }
 
     private static <I extends Iface> java.util.Map<java.lang.String,  org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>> getProcessMap(java.util.Map<java.lang.String, org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
-      processMap.put("find", new find());
+      processMap.put("ping", new ping());
       processMap.put("findAll", new findAll());
       processMap.put("findById", new findById());
       processMap.put("create", new create());
@@ -556,22 +552,23 @@ public class PostService {
       return processMap;
     }
 
-    public static class find<I extends Iface> extends org.apache.thrift.ProcessFunction<I, find_args> {
-      public find() {
-        super("find");
+    public static class ping<I extends Iface> extends org.apache.thrift.ProcessFunction<I, ping_args> {
+      public ping() {
+        super("ping");
       }
 
-      public find_args getEmptyArgsInstance() {
-        return new find_args();
+      public ping_args getEmptyArgsInstance() {
+        return new ping_args();
       }
 
       protected boolean isOneway() {
         return false;
       }
 
-      public find_result getResult(I iface, find_args args) throws org.apache.thrift.TException {
-        find_result result = new find_result();
-        result.success = iface.find(args.query);
+      public ping_result getResult(I iface, ping_args args) throws org.apache.thrift.TException {
+        ping_result result = new ping_result();
+        result.success = iface.ping(args.seq);
+        result.setSuccessIsSet(true);
         return result;
       }
     }
@@ -591,7 +588,7 @@ public class PostService {
 
       public findAll_result getResult(I iface, findAll_args args) throws org.apache.thrift.TException {
         findAll_result result = new findAll_result();
-        result.success = iface.findAll();
+        result.success = iface.findAll(args.req);
         return result;
       }
     }
@@ -611,7 +608,7 @@ public class PostService {
 
       public findById_result getResult(I iface, findById_args args) throws org.apache.thrift.TException {
         findById_result result = new findById_result();
-        result.success = iface.findById(args.id);
+        result.success = iface.findById(args.req);
         return result;
       }
     }
@@ -631,7 +628,7 @@ public class PostService {
 
       public create_result getResult(I iface, create_args args) throws org.apache.thrift.TException {
         create_result result = new create_result();
-        result.success = iface.create(args.post);
+        result.success = iface.create(args.req);
         return result;
       }
     }
@@ -651,7 +648,7 @@ public class PostService {
 
       public createWithTags_result getResult(I iface, createWithTags_args args) throws org.apache.thrift.TException {
         createWithTags_result result = new createWithTags_result();
-        result.success = iface.createWithTags(args.post, args.tagList);
+        result.success = iface.createWithTags(args.req);
         return result;
       }
     }
@@ -671,7 +668,7 @@ public class PostService {
 
       public update_result getResult(I iface, update_args args) throws org.apache.thrift.TException {
         update_result result = new update_result();
-        result.success = iface.update(args.post);
+        result.success = iface.update(args.req);
         return result;
       }
     }
@@ -691,7 +688,7 @@ public class PostService {
 
       public updateWithTags_result getResult(I iface, updateWithTags_args args) throws org.apache.thrift.TException {
         updateWithTags_result result = new updateWithTags_result();
-        result.success = iface.updateWithTags(args.post, args.tagList);
+        result.success = iface.updateWithTags(args.req);
         return result;
       }
     }
@@ -711,7 +708,7 @@ public class PostService {
 
       public deleteById_result getResult(I iface, deleteById_args args) throws org.apache.thrift.TException {
         deleteById_result result = new deleteById_result();
-        result.success = iface.deleteById(args.id);
+        result.success = iface.deleteById(args.req);
         return result;
       }
     }
@@ -729,7 +726,7 @@ public class PostService {
     }
 
     private static <I extends AsyncIface> java.util.Map<java.lang.String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase,?>> getProcessMap(java.util.Map<java.lang.String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
-      processMap.put("find", new find());
+      processMap.put("ping", new ping());
       processMap.put("findAll", new findAll());
       processMap.put("findById", new findById());
       processMap.put("create", new create());
@@ -740,21 +737,22 @@ public class PostService {
       return processMap;
     }
 
-    public static class find<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, find_args, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> {
-      public find() {
-        super("find");
+    public static class ping<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, ping_args, java.lang.Integer> {
+      public ping() {
+        super("ping");
       }
 
-      public find_args getEmptyArgsInstance() {
-        return new find_args();
+      public ping_args getEmptyArgsInstance() {
+        return new ping_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>>() { 
-          public void onComplete(java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> o) {
-            find_result result = new find_result();
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
+            ping_result result = new ping_result();
             result.success = o;
+            result.setSuccessIsSet(true);
             try {
               fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
             } catch (org.apache.thrift.transport.TTransportException e) {
@@ -768,7 +766,7 @@ public class PostService {
           public void onError(java.lang.Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TSerializable msg;
-            find_result result = new find_result();
+            ping_result result = new ping_result();
             if (e instanceof org.apache.thrift.transport.TTransportException) {
               _LOGGER.error("TTransportException inside handler", e);
               fb.close();
@@ -796,12 +794,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, find_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler) throws org.apache.thrift.TException {
-        iface.find(args.query,resultHandler);
+      public void start(I iface, ping_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+        iface.ping(args.seq,resultHandler);
       }
     }
 
-    public static class findAll<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, findAll_args, java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> {
+    public static class findAll<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, findAll_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public findAll() {
         super("findAll");
       }
@@ -810,10 +808,10 @@ public class PostService {
         return new findAll_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>>() { 
-          public void onComplete(java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             findAll_result result = new findAll_result();
             result.success = o;
             try {
@@ -857,12 +855,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, findAll_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>> resultHandler) throws org.apache.thrift.TException {
-        iface.findAll(resultHandler);
+      public void start(I iface, findAll_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.findAll(args.req,resultHandler);
       }
     }
 
-    public static class findById<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, findById_args, com.jnudeveloper.blog.thriftgen.domain.TPost> {
+    public static class findById<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, findById_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public findById() {
         super("findById");
       }
@@ -871,10 +869,10 @@ public class PostService {
         return new findById_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TPost> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TPost>() { 
-          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.TPost o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             findById_result result = new findById_result();
             result.success = o;
             try {
@@ -918,12 +916,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, findById_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TPost> resultHandler) throws org.apache.thrift.TException {
-        iface.findById(args.id,resultHandler);
+      public void start(I iface, findById_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.findById(args.req,resultHandler);
       }
     }
 
-    public static class create<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, create_args, com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
+    public static class create<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, create_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public create() {
         super("create");
       }
@@ -932,10 +930,10 @@ public class PostService {
         return new create_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult>() { 
-          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.TCUDResult o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             create_result result = new create_result();
             result.success = o;
             try {
@@ -979,12 +977,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, create_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
-        iface.create(args.post,resultHandler);
+      public void start(I iface, create_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.create(args.req,resultHandler);
       }
     }
 
-    public static class createWithTags<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, createWithTags_args, com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
+    public static class createWithTags<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, createWithTags_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public createWithTags() {
         super("createWithTags");
       }
@@ -993,10 +991,10 @@ public class PostService {
         return new createWithTags_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult>() { 
-          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.TCUDResult o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             createWithTags_result result = new createWithTags_result();
             result.success = o;
             try {
@@ -1040,12 +1038,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, createWithTags_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
-        iface.createWithTags(args.post, args.tagList,resultHandler);
+      public void start(I iface, createWithTags_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.createWithTags(args.req,resultHandler);
       }
     }
 
-    public static class update<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, update_args, com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
+    public static class update<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, update_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public update() {
         super("update");
       }
@@ -1054,10 +1052,10 @@ public class PostService {
         return new update_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult>() { 
-          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.TCUDResult o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             update_result result = new update_result();
             result.success = o;
             try {
@@ -1101,12 +1099,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, update_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
-        iface.update(args.post,resultHandler);
+      public void start(I iface, update_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.update(args.req,resultHandler);
       }
     }
 
-    public static class updateWithTags<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, updateWithTags_args, com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
+    public static class updateWithTags<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, updateWithTags_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public updateWithTags() {
         super("updateWithTags");
       }
@@ -1115,10 +1113,10 @@ public class PostService {
         return new updateWithTags_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult>() { 
-          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.TCUDResult o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             updateWithTags_result result = new updateWithTags_result();
             result.success = o;
             try {
@@ -1162,12 +1160,12 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, updateWithTags_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
-        iface.updateWithTags(args.post, args.tagList,resultHandler);
+      public void start(I iface, updateWithTags_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.updateWithTags(args.req,resultHandler);
       }
     }
 
-    public static class deleteById<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, deleteById_args, com.jnudeveloper.blog.thriftgen.domain.TCUDResult> {
+    public static class deleteById<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, deleteById_args, com.jnudeveloper.blog.thriftgen.domain.Response> {
       public deleteById() {
         super("deleteById");
       }
@@ -1176,10 +1174,10 @@ public class PostService {
         return new deleteById_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult>() { 
-          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.TCUDResult o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response>() { 
+          public void onComplete(com.jnudeveloper.blog.thriftgen.domain.Response o) {
             deleteById_result result = new deleteById_result();
             result.success = o;
             try {
@@ -1223,26 +1221,26 @@ public class PostService {
         return false;
       }
 
-      public void start(I iface, deleteById_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.TCUDResult> resultHandler) throws org.apache.thrift.TException {
-        iface.deleteById(args.id,resultHandler);
+      public void start(I iface, deleteById_args args, org.apache.thrift.async.AsyncMethodCallback<com.jnudeveloper.blog.thriftgen.domain.Response> resultHandler) throws org.apache.thrift.TException {
+        iface.deleteById(args.req,resultHandler);
       }
     }
 
   }
 
-  public static class find_args implements org.apache.thrift.TBase<find_args, find_args._Fields>, java.io.Serializable, Cloneable, Comparable<find_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("find_args");
+  public static class ping_args implements org.apache.thrift.TBase<ping_args, ping_args._Fields>, java.io.Serializable, Cloneable, Comparable<ping_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("ping_args");
 
-    private static final org.apache.thrift.protocol.TField QUERY_FIELD_DESC = new org.apache.thrift.protocol.TField("query", org.apache.thrift.protocol.TType.STRUCT, (short)1);
+    private static final org.apache.thrift.protocol.TField SEQ_FIELD_DESC = new org.apache.thrift.protocol.TField("seq", org.apache.thrift.protocol.TType.I32, (short)1);
 
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new find_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new find_argsTupleSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new ping_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new ping_argsTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TQuery query; // required
+    public int seq; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      QUERY((short)1, "query");
+      SEQ((short)1, "seq");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -1257,8 +1255,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // QUERY
-            return QUERY;
+          case 1: // SEQ
+            return SEQ;
           default:
             return null;
         }
@@ -1299,74 +1297,76 @@ public class PostService {
     }
 
     // isset id assignments
+    private static final int __SEQ_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUERY, new org.apache.thrift.meta_data.FieldMetaData("query", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TQuery.class)));
+      tmpMap.put(_Fields.SEQ, new org.apache.thrift.meta_data.FieldMetaData("seq", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(find_args.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(ping_args.class, metaDataMap);
     }
 
-    public find_args() {
+    public ping_args() {
     }
 
-    public find_args(
-      com.jnudeveloper.blog.thriftgen.domain.TQuery query)
+    public ping_args(
+      int seq)
     {
       this();
-      this.query = query;
+      this.seq = seq;
+      setSeqIsSet(true);
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public find_args(find_args other) {
-      if (other.isSetQuery()) {
-        this.query = new com.jnudeveloper.blog.thriftgen.domain.TQuery(other.query);
-      }
+    public ping_args(ping_args other) {
+      __isset_bitfield = other.__isset_bitfield;
+      this.seq = other.seq;
     }
 
-    public find_args deepCopy() {
-      return new find_args(this);
+    public ping_args deepCopy() {
+      return new ping_args(this);
     }
 
     @Override
     public void clear() {
-      this.query = null;
+      setSeqIsSet(false);
+      this.seq = 0;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TQuery getQuery() {
-      return this.query;
+    public int getSeq() {
+      return this.seq;
     }
 
-    public find_args setQuery(com.jnudeveloper.blog.thriftgen.domain.TQuery query) {
-      this.query = query;
+    public ping_args setSeq(int seq) {
+      this.seq = seq;
+      setSeqIsSet(true);
       return this;
     }
 
-    public void unsetQuery() {
-      this.query = null;
+    public void unsetSeq() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __SEQ_ISSET_ID);
     }
 
-    /** Returns true if field query is set (has been assigned a value) and false otherwise */
-    public boolean isSetQuery() {
-      return this.query != null;
+    /** Returns true if field seq is set (has been assigned a value) and false otherwise */
+    public boolean isSetSeq() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __SEQ_ISSET_ID);
     }
 
-    public void setQueryIsSet(boolean value) {
-      if (!value) {
-        this.query = null;
-      }
+    public void setSeqIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SEQ_ISSET_ID, value);
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case QUERY:
+      case SEQ:
         if (value == null) {
-          unsetQuery();
+          unsetSeq();
         } else {
-          setQuery((com.jnudeveloper.blog.thriftgen.domain.TQuery)value);
+          setSeq((java.lang.Integer)value);
         }
         break;
 
@@ -1375,8 +1375,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case QUERY:
-        return getQuery();
+      case SEQ:
+        return getSeq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -1389,8 +1389,8 @@ public class PostService {
       }
 
       switch (field) {
-      case QUERY:
-        return isSetQuery();
+      case SEQ:
+        return isSetSeq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -1399,23 +1399,23 @@ public class PostService {
     public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
-      if (that instanceof find_args)
-        return this.equals((find_args)that);
+      if (that instanceof ping_args)
+        return this.equals((ping_args)that);
       return false;
     }
 
-    public boolean equals(find_args that) {
+    public boolean equals(ping_args that) {
       if (that == null)
         return false;
       if (this == that)
         return true;
 
-      boolean this_present_query = true && this.isSetQuery();
-      boolean that_present_query = true && that.isSetQuery();
-      if (this_present_query || that_present_query) {
-        if (!(this_present_query && that_present_query))
+      boolean this_present_seq = true;
+      boolean that_present_seq = true;
+      if (this_present_seq || that_present_seq) {
+        if (!(this_present_seq && that_present_seq))
           return false;
-        if (!this.query.equals(that.query))
+        if (this.seq != that.seq)
           return false;
       }
 
@@ -1426,27 +1426,25 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((isSetQuery()) ? 131071 : 524287);
-      if (isSetQuery())
-        hashCode = hashCode * 8191 + query.hashCode();
+      hashCode = hashCode * 8191 + seq;
 
       return hashCode;
     }
 
     @Override
-    public int compareTo(find_args other) {
+    public int compareTo(ping_args other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetQuery()).compareTo(other.isSetQuery());
+      lastComparison = java.lang.Boolean.valueOf(isSetSeq()).compareTo(other.isSetSeq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetQuery()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.query, other.query);
+      if (isSetSeq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.seq, other.seq);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -1468,15 +1466,11 @@ public class PostService {
 
     @Override
     public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("find_args(");
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("ping_args(");
       boolean first = true;
 
-      sb.append("query:");
-      if (this.query == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.query);
-      }
+      sb.append("seq:");
+      sb.append(this.seq);
       first = false;
       sb.append(")");
       return sb.toString();
@@ -1485,9 +1479,6 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
-      if (query != null) {
-        query.validate();
-      }
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
@@ -1500,21 +1491,23 @@ public class PostService {
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
-    private static class find_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public find_argsStandardScheme getScheme() {
-        return new find_argsStandardScheme();
+    private static class ping_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public ping_argsStandardScheme getScheme() {
+        return new ping_argsStandardScheme();
       }
     }
 
-    private static class find_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<find_args> {
+    private static class ping_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<ping_args> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, find_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, ping_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -1524,11 +1517,10 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // QUERY
-              if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.query = new com.jnudeveloper.blog.thriftgen.domain.TQuery();
-                struct.query.read(iprot);
-                struct.setQueryIsSet(true);
+            case 1: // SEQ
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.seq = iprot.readI32();
+                struct.setSeqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -1544,50 +1536,47 @@ public class PostService {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, find_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, ping_args struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.query != null) {
-          oprot.writeFieldBegin(QUERY_FIELD_DESC);
-          struct.query.write(oprot);
-          oprot.writeFieldEnd();
-        }
+        oprot.writeFieldBegin(SEQ_FIELD_DESC);
+        oprot.writeI32(struct.seq);
+        oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
       }
 
     }
 
-    private static class find_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public find_argsTupleScheme getScheme() {
-        return new find_argsTupleScheme();
+    private static class ping_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public ping_argsTupleScheme getScheme() {
+        return new ping_argsTupleScheme();
       }
     }
 
-    private static class find_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<find_args> {
+    private static class ping_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<ping_args> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, find_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, ping_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetQuery()) {
+        if (struct.isSetSeq()) {
           optionals.set(0);
         }
         oprot.writeBitSet(optionals, 1);
-        if (struct.isSetQuery()) {
-          struct.query.write(oprot);
+        if (struct.isSetSeq()) {
+          oprot.writeI32(struct.seq);
         }
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, find_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, ping_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.query = new com.jnudeveloper.blog.thriftgen.domain.TQuery();
-          struct.query.read(iprot);
-          struct.setQueryIsSet(true);
+          struct.seq = iprot.readI32();
+          struct.setSeqIsSet(true);
         }
       }
     }
@@ -1597,15 +1586,15 @@ public class PostService {
     }
   }
 
-  public static class find_result implements org.apache.thrift.TBase<find_result, find_result._Fields>, java.io.Serializable, Cloneable, Comparable<find_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("find_result");
+  public static class ping_result implements org.apache.thrift.TBase<ping_result, ping_result._Fields>, java.io.Serializable, Cloneable, Comparable<ping_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("ping_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new find_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new find_resultTupleSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new ping_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new ping_resultTupleSchemeFactory();
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -1666,85 +1655,67 @@ public class PostService {
     }
 
     // isset id assignments
+    private static final int __SUCCESS_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class))));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(find_result.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(ping_result.class, metaDataMap);
     }
 
-    public find_result() {
+    public ping_result() {
     }
 
-    public find_result(
-      java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> success)
+    public ping_result(
+      int success)
     {
       this();
       this.success = success;
+      setSuccessIsSet(true);
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public find_result(find_result other) {
-      if (other.isSetSuccess()) {
-        java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> __this__success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>(other.success.size());
-        for (com.jnudeveloper.blog.thriftgen.domain.TPost other_element : other.success) {
-          __this__success.add(new com.jnudeveloper.blog.thriftgen.domain.TPost(other_element));
-        }
-        this.success = __this__success;
-      }
+    public ping_result(ping_result other) {
+      __isset_bitfield = other.__isset_bitfield;
+      this.success = other.success;
     }
 
-    public find_result deepCopy() {
-      return new find_result(this);
+    public ping_result deepCopy() {
+      return new ping_result(this);
     }
 
     @Override
     public void clear() {
-      this.success = null;
+      setSuccessIsSet(false);
+      this.success = 0;
     }
 
-    public int getSuccessSize() {
-      return (this.success == null) ? 0 : this.success.size();
-    }
-
-    public java.util.Iterator<com.jnudeveloper.blog.thriftgen.domain.TPost> getSuccessIterator() {
-      return (this.success == null) ? null : this.success.iterator();
-    }
-
-    public void addToSuccess(com.jnudeveloper.blog.thriftgen.domain.TPost elem) {
-      if (this.success == null) {
-        this.success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>();
-      }
-      this.success.add(elem);
-    }
-
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> getSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public find_result setSuccess(java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> success) {
+    public ping_result setSuccess(int success) {
       this.success = success;
+      setSuccessIsSet(true);
       return this;
     }
 
     public void unsetSuccess() {
-      this.success = null;
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __SUCCESS_ISSET_ID);
     }
 
     /** Returns true if field success is set (has been assigned a value) and false otherwise */
     public boolean isSetSuccess() {
-      return this.success != null;
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __SUCCESS_ISSET_ID);
     }
 
     public void setSuccessIsSet(boolean value) {
-      if (!value) {
-        this.success = null;
-      }
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SUCCESS_ISSET_ID, value);
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
@@ -1753,7 +1724,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -1786,23 +1757,23 @@ public class PostService {
     public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
-      if (that instanceof find_result)
-        return this.equals((find_result)that);
+      if (that instanceof ping_result)
+        return this.equals((ping_result)that);
       return false;
     }
 
-    public boolean equals(find_result that) {
+    public boolean equals(ping_result that) {
       if (that == null)
         return false;
       if (this == that)
         return true;
 
-      boolean this_present_success = true && this.isSetSuccess();
-      boolean that_present_success = true && that.isSetSuccess();
+      boolean this_present_success = true;
+      boolean that_present_success = true;
       if (this_present_success || that_present_success) {
         if (!(this_present_success && that_present_success))
           return false;
-        if (!this.success.equals(that.success))
+        if (this.success != that.success)
           return false;
       }
 
@@ -1813,15 +1784,13 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
-      if (isSetSuccess())
-        hashCode = hashCode * 8191 + success.hashCode();
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
 
     @Override
-    public int compareTo(find_result other) {
+    public int compareTo(ping_result other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -1855,15 +1824,11 @@ public class PostService {
 
     @Override
     public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("find_result(");
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("ping_result(");
       boolean first = true;
 
       sb.append("success:");
-      if (this.success == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.success);
-      }
+      sb.append(this.success);
       first = false;
       sb.append(")");
       return sb.toString();
@@ -1884,21 +1849,23 @@ public class PostService {
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
-    private static class find_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public find_resultStandardScheme getScheme() {
-        return new find_resultStandardScheme();
+    private static class ping_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public ping_resultStandardScheme getScheme() {
+        return new ping_resultStandardScheme();
       }
     }
 
-    private static class find_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<find_result> {
+    private static class ping_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<ping_result> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, find_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, ping_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -1909,19 +1876,8 @@ public class PostService {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
-                {
-                  org.apache.thrift.protocol.TList _list0 = iprot.readListBegin();
-                  struct.success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>(_list0.size);
-                  com.jnudeveloper.blog.thriftgen.domain.TPost _elem1;
-                  for (int _i2 = 0; _i2 < _list0.size; ++_i2)
-                  {
-                    _elem1 = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-                    _elem1.read(iprot);
-                    struct.success.add(_elem1);
-                  }
-                  iprot.readListEnd();
-                }
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -1938,20 +1894,13 @@ public class PostService {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, find_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, ping_result struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.success != null) {
+        if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          {
-            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, struct.success.size()));
-            for (com.jnudeveloper.blog.thriftgen.domain.TPost _iter3 : struct.success)
-            {
-              _iter3.write(oprot);
-            }
-            oprot.writeListEnd();
-          }
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -1960,16 +1909,16 @@ public class PostService {
 
     }
 
-    private static class find_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public find_resultTupleScheme getScheme() {
-        return new find_resultTupleScheme();
+    private static class ping_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public ping_resultTupleScheme getScheme() {
+        return new ping_resultTupleScheme();
       }
     }
 
-    private static class find_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<find_result> {
+    private static class ping_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<ping_result> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, find_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, ping_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
         if (struct.isSetSuccess()) {
@@ -1977,32 +1926,16 @@ public class PostService {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          {
-            oprot.writeI32(struct.success.size());
-            for (com.jnudeveloper.blog.thriftgen.domain.TPost _iter4 : struct.success)
-            {
-              _iter4.write(oprot);
-            }
-          }
+          oprot.writeI32(struct.success);
         }
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, find_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, ping_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          {
-            org.apache.thrift.protocol.TList _list5 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, iprot.readI32());
-            struct.success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>(_list5.size);
-            com.jnudeveloper.blog.thriftgen.domain.TPost _elem6;
-            for (int _i7 = 0; _i7 < _list5.size; ++_i7)
-            {
-              _elem6 = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-              _elem6.read(iprot);
-              struct.success.add(_elem6);
-            }
-          }
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -2016,14 +1949,16 @@ public class PostService {
   public static class findAll_args implements org.apache.thrift.TBase<findAll_args, findAll_args._Fields>, java.io.Serializable, Cloneable, Comparable<findAll_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("findAll_args");
 
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new findAll_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new findAll_argsTupleSchemeFactory();
 
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-;
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -2038,6 +1973,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -2076,9 +2013,13 @@ public class PostService {
         return _fieldName;
       }
     }
+
+    // isset id assignments
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(findAll_args.class, metaDataMap);
     }
@@ -2086,10 +2027,20 @@ public class PostService {
     public findAll_args() {
     }
 
+    public findAll_args(
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
+    {
+      this();
+      this.req = req;
+    }
+
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public findAll_args(findAll_args other) {
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
+      }
     }
 
     public findAll_args deepCopy() {
@@ -2098,15 +2049,51 @@ public class PostService {
 
     @Override
     public void clear() {
+      this.req = null;
+    }
+
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
+    }
+
+    public findAll_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
+      return this;
+    }
+
+    public void unsetReq() {
+      this.req = null;
+    }
+
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
+    }
+
+    public void setReqIsSet(boolean value) {
+      if (!value) {
+        this.req = null;
+      }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
+      case REQ:
+        if (value == null) {
+          unsetReq();
+        } else {
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
+        }
+        break;
+
       }
     }
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
+      case REQ:
+        return getReq();
+
       }
       throw new java.lang.IllegalStateException();
     }
@@ -2118,6 +2105,8 @@ public class PostService {
       }
 
       switch (field) {
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -2137,12 +2126,25 @@ public class PostService {
       if (this == that)
         return true;
 
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
+          return false;
+        if (!this.req.equals(that.req))
+          return false;
+      }
+
       return true;
     }
 
     @Override
     public int hashCode() {
       int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -2155,6 +2157,16 @@ public class PostService {
 
       int lastComparison = 0;
 
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
       return 0;
     }
 
@@ -2175,6 +2187,13 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("findAll_args(");
       boolean first = true;
 
+      sb.append("req:");
+      if (this.req == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.req);
+      }
+      first = false;
       sb.append(")");
       return sb.toString();
     }
@@ -2182,6 +2201,9 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
+      if (req != null) {
+        req.validate();
+      }
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
@@ -2218,6 +2240,15 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
+            case 1: // REQ
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
             default:
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
           }
@@ -2233,6 +2264,11 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
+          oprot.writeFieldEnd();
+        }
         oprot.writeFieldStop();
         oprot.writeStructEnd();
       }
@@ -2250,11 +2286,25 @@ public class PostService {
       @Override
       public void write(org.apache.thrift.protocol.TProtocol prot, findAll_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetReq()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
+        }
       }
 
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, findAll_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
+        }
       }
     }
 
@@ -2266,12 +2316,12 @@ public class PostService {
   public static class findAll_result implements org.apache.thrift.TBase<findAll_result, findAll_result._Fields>, java.io.Serializable, Cloneable, Comparable<findAll_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("findAll_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRUCT, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new findAll_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new findAll_resultTupleSchemeFactory();
 
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -2336,8 +2386,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class))));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(findAll_result.class, metaDataMap);
     }
@@ -2346,7 +2395,7 @@ public class PostService {
     }
 
     public findAll_result(
-      java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -2357,11 +2406,7 @@ public class PostService {
      */
     public findAll_result(findAll_result other) {
       if (other.isSetSuccess()) {
-        java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> __this__success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>(other.success.size());
-        for (com.jnudeveloper.blog.thriftgen.domain.TPost other_element : other.success) {
-          __this__success.add(new com.jnudeveloper.blog.thriftgen.domain.TPost(other_element));
-        }
-        this.success = __this__success;
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -2374,26 +2419,11 @@ public class PostService {
       this.success = null;
     }
 
-    public int getSuccessSize() {
-      return (this.success == null) ? 0 : this.success.size();
-    }
-
-    public java.util.Iterator<com.jnudeveloper.blog.thriftgen.domain.TPost> getSuccessIterator() {
-      return (this.success == null) ? null : this.success.iterator();
-    }
-
-    public void addToSuccess(com.jnudeveloper.blog.thriftgen.domain.TPost elem) {
-      if (this.success == null) {
-        this.success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>();
-      }
-      this.success.add(elem);
-    }
-
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public findAll_result setSuccess(java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost> success) {
+    public findAll_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -2419,7 +2449,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.util.List<com.jnudeveloper.blog.thriftgen.domain.TPost>)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -2538,6 +2568,9 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
+      if (success != null) {
+        success.validate();
+      }
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
@@ -2575,19 +2608,9 @@ public class PostService {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
-                {
-                  org.apache.thrift.protocol.TList _list8 = iprot.readListBegin();
-                  struct.success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>(_list8.size);
-                  com.jnudeveloper.blog.thriftgen.domain.TPost _elem9;
-                  for (int _i10 = 0; _i10 < _list8.size; ++_i10)
-                  {
-                    _elem9 = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-                    _elem9.read(iprot);
-                    struct.success.add(_elem9);
-                  }
-                  iprot.readListEnd();
-                }
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
+                struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -2610,14 +2633,7 @@ public class PostService {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.success != null) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          {
-            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, struct.success.size()));
-            for (com.jnudeveloper.blog.thriftgen.domain.TPost _iter11 : struct.success)
-            {
-              _iter11.write(oprot);
-            }
-            oprot.writeListEnd();
-          }
+          struct.success.write(oprot);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -2643,13 +2659,7 @@ public class PostService {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          {
-            oprot.writeI32(struct.success.size());
-            for (com.jnudeveloper.blog.thriftgen.domain.TPost _iter12 : struct.success)
-            {
-              _iter12.write(oprot);
-            }
-          }
+          struct.success.write(oprot);
         }
       }
 
@@ -2658,17 +2668,8 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          {
-            org.apache.thrift.protocol.TList _list13 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, iprot.readI32());
-            struct.success = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TPost>(_list13.size);
-            com.jnudeveloper.blog.thriftgen.domain.TPost _elem14;
-            for (int _i15 = 0; _i15 < _list13.size; ++_i15)
-            {
-              _elem14 = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-              _elem14.read(iprot);
-              struct.success.add(_elem14);
-            }
-          }
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
+          struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
       }
@@ -2682,16 +2683,16 @@ public class PostService {
   public static class findById_args implements org.apache.thrift.TBase<findById_args, findById_args._Fields>, java.io.Serializable, Cloneable, Comparable<findById_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("findById_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new findById_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new findById_argsTupleSchemeFactory();
 
-    public int id; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      ID((short)1, "id");
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -2706,8 +2707,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // ID
-            return ID;
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -2748,13 +2749,11 @@ public class PostService {
     }
 
     // isset id assignments
-    private static final int __ID_ISSET_ID = 0;
-    private byte __isset_bitfield = 0;
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(findById_args.class, metaDataMap);
     }
@@ -2763,19 +2762,19 @@ public class PostService {
     }
 
     public findById_args(
-      int id)
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
     {
       this();
-      this.id = id;
-      setIdIsSet(true);
+      this.req = req;
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public findById_args(findById_args other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.id = other.id;
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
+      }
     }
 
     public findById_args deepCopy() {
@@ -2784,40 +2783,40 @@ public class PostService {
 
     @Override
     public void clear() {
-      setIdIsSet(false);
-      this.id = 0;
+      this.req = null;
     }
 
-    public int getId() {
-      return this.id;
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
     }
 
-    public findById_args setId(int id) {
-      this.id = id;
-      setIdIsSet(true);
+    public findById_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
       return this;
     }
 
-    public void unsetId() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
+    public void unsetReq() {
+      this.req = null;
     }
 
-    /** Returns true if field id is set (has been assigned a value) and false otherwise */
-    public boolean isSetId() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
     }
 
-    public void setIdIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
+    public void setReqIsSet(boolean value) {
+      if (!value) {
+        this.req = null;
+      }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case ID:
+      case REQ:
         if (value == null) {
-          unsetId();
+          unsetReq();
         } else {
-          setId((java.lang.Integer)value);
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
         }
         break;
 
@@ -2826,8 +2825,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case ID:
-        return getId();
+      case REQ:
+        return getReq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -2840,8 +2839,8 @@ public class PostService {
       }
 
       switch (field) {
-      case ID:
-        return isSetId();
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -2861,12 +2860,12 @@ public class PostService {
       if (this == that)
         return true;
 
-      boolean this_present_id = true;
-      boolean that_present_id = true;
-      if (this_present_id || that_present_id) {
-        if (!(this_present_id && that_present_id))
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
           return false;
-        if (this.id != that.id)
+        if (!this.req.equals(that.req))
           return false;
       }
 
@@ -2877,7 +2876,9 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -2890,12 +2891,12 @@ public class PostService {
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetId()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2920,8 +2921,12 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("findById_args(");
       boolean first = true;
 
-      sb.append("id:");
-      sb.append(this.id);
+      sb.append("req:");
+      if (this.req == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.req);
+      }
       first = false;
       sb.append(")");
       return sb.toString();
@@ -2930,6 +2935,9 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
+      if (req != null) {
+        req.validate();
+      }
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
@@ -2942,8 +2950,6 @@ public class PostService {
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
         throw new java.io.IOException(te);
@@ -2968,10 +2974,11 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
-                struct.setIdIsSet(true);
+            case 1: // REQ
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -2991,9 +2998,11 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
-        oprot.writeFieldEnd();
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
+          oprot.writeFieldEnd();
+        }
         oprot.writeFieldStop();
         oprot.writeStructEnd();
       }
@@ -3012,12 +3021,12 @@ public class PostService {
       public void write(org.apache.thrift.protocol.TProtocol prot, findById_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetId()) {
+        if (struct.isSetReq()) {
           optionals.set(0);
         }
         oprot.writeBitSet(optionals, 1);
-        if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
         }
       }
 
@@ -3026,8 +3035,9 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
-          struct.setIdIsSet(true);
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
         }
       }
     }
@@ -3045,7 +3055,7 @@ public class PostService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new findById_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new findById_resultTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3110,7 +3120,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(findById_result.class, metaDataMap);
     }
@@ -3119,7 +3129,7 @@ public class PostService {
     }
 
     public findById_result(
-      com.jnudeveloper.blog.thriftgen.domain.TPost success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -3130,7 +3140,7 @@ public class PostService {
      */
     public findById_result(findById_result other) {
       if (other.isSetSuccess()) {
-        this.success = new com.jnudeveloper.blog.thriftgen.domain.TPost(other.success);
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -3143,11 +3153,11 @@ public class PostService {
       this.success = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public findById_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.TPost success) {
+    public findById_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -3173,7 +3183,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((com.jnudeveloper.blog.thriftgen.domain.TPost)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -3333,7 +3343,7 @@ public class PostService {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new com.jnudeveloper.blog.thriftgen.domain.TPost();
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -3392,7 +3402,7 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new com.jnudeveloper.blog.thriftgen.domain.TPost();
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
@@ -3407,16 +3417,16 @@ public class PostService {
   public static class create_args implements org.apache.thrift.TBase<create_args, create_args._Fields>, java.io.Serializable, Cloneable, Comparable<create_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("create_args");
 
-    private static final org.apache.thrift.protocol.TField POST_FIELD_DESC = new org.apache.thrift.protocol.TField("post", org.apache.thrift.protocol.TType.STRUCT, (short)1);
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new create_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new create_argsTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost post; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      POST((short)1, "post");
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -3431,8 +3441,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // POST
-            return POST;
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -3476,8 +3486,8 @@ public class PostService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.POST, new org.apache.thrift.meta_data.FieldMetaData("post", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class)));
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(create_args.class, metaDataMap);
     }
@@ -3486,18 +3496,18 @@ public class PostService {
     }
 
     public create_args(
-      com.jnudeveloper.blog.thriftgen.domain.TPost post)
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
     {
       this();
-      this.post = post;
+      this.req = req;
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public create_args(create_args other) {
-      if (other.isSetPost()) {
-        this.post = new com.jnudeveloper.blog.thriftgen.domain.TPost(other.post);
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
       }
     }
 
@@ -3507,40 +3517,40 @@ public class PostService {
 
     @Override
     public void clear() {
-      this.post = null;
+      this.req = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost getPost() {
-      return this.post;
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
     }
 
-    public create_args setPost(com.jnudeveloper.blog.thriftgen.domain.TPost post) {
-      this.post = post;
+    public create_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
       return this;
     }
 
-    public void unsetPost() {
-      this.post = null;
+    public void unsetReq() {
+      this.req = null;
     }
 
-    /** Returns true if field post is set (has been assigned a value) and false otherwise */
-    public boolean isSetPost() {
-      return this.post != null;
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
     }
 
-    public void setPostIsSet(boolean value) {
+    public void setReqIsSet(boolean value) {
       if (!value) {
-        this.post = null;
+        this.req = null;
       }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case POST:
+      case REQ:
         if (value == null) {
-          unsetPost();
+          unsetReq();
         } else {
-          setPost((com.jnudeveloper.blog.thriftgen.domain.TPost)value);
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
         }
         break;
 
@@ -3549,8 +3559,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case POST:
-        return getPost();
+      case REQ:
+        return getReq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -3563,8 +3573,8 @@ public class PostService {
       }
 
       switch (field) {
-      case POST:
-        return isSetPost();
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -3584,12 +3594,12 @@ public class PostService {
       if (this == that)
         return true;
 
-      boolean this_present_post = true && this.isSetPost();
-      boolean that_present_post = true && that.isSetPost();
-      if (this_present_post || that_present_post) {
-        if (!(this_present_post && that_present_post))
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
           return false;
-        if (!this.post.equals(that.post))
+        if (!this.req.equals(that.req))
           return false;
       }
 
@@ -3600,9 +3610,9 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((isSetPost()) ? 131071 : 524287);
-      if (isSetPost())
-        hashCode = hashCode * 8191 + post.hashCode();
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -3615,12 +3625,12 @@ public class PostService {
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetPost()).compareTo(other.isSetPost());
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetPost()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.post, other.post);
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -3645,11 +3655,11 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("create_args(");
       boolean first = true;
 
-      sb.append("post:");
-      if (this.post == null) {
+      sb.append("req:");
+      if (this.req == null) {
         sb.append("null");
       } else {
-        sb.append(this.post);
+        sb.append(this.req);
       }
       first = false;
       sb.append(")");
@@ -3659,8 +3669,8 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
-      if (post != null) {
-        post.validate();
+      if (req != null) {
+        req.validate();
       }
     }
 
@@ -3698,11 +3708,11 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // POST
+            case 1: // REQ
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-                struct.post.read(iprot);
-                struct.setPostIsSet(true);
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -3722,9 +3732,9 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.post != null) {
-          oprot.writeFieldBegin(POST_FIELD_DESC);
-          struct.post.write(oprot);
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -3745,12 +3755,12 @@ public class PostService {
       public void write(org.apache.thrift.protocol.TProtocol prot, create_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetPost()) {
+        if (struct.isSetReq()) {
           optionals.set(0);
         }
         oprot.writeBitSet(optionals, 1);
-        if (struct.isSetPost()) {
-          struct.post.write(oprot);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
         }
       }
 
@@ -3759,9 +3769,9 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-          struct.post.read(iprot);
-          struct.setPostIsSet(true);
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
         }
       }
     }
@@ -3779,7 +3789,7 @@ public class PostService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new create_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new create_resultTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3844,7 +3854,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TCUDResult.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(create_result.class, metaDataMap);
     }
@@ -3853,7 +3863,7 @@ public class PostService {
     }
 
     public create_result(
-      com.jnudeveloper.blog.thriftgen.domain.TCUDResult success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -3864,7 +3874,7 @@ public class PostService {
      */
     public create_result(create_result other) {
       if (other.isSetSuccess()) {
-        this.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult(other.success);
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -3877,11 +3887,11 @@ public class PostService {
       this.success = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public create_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.TCUDResult success) {
+    public create_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -3907,7 +3917,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((com.jnudeveloper.blog.thriftgen.domain.TCUDResult)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -4067,7 +4077,7 @@ public class PostService {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -4126,7 +4136,7 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
@@ -4141,19 +4151,16 @@ public class PostService {
   public static class createWithTags_args implements org.apache.thrift.TBase<createWithTags_args, createWithTags_args._Fields>, java.io.Serializable, Cloneable, Comparable<createWithTags_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("createWithTags_args");
 
-    private static final org.apache.thrift.protocol.TField POST_FIELD_DESC = new org.apache.thrift.protocol.TField("post", org.apache.thrift.protocol.TType.STRUCT, (short)1);
-    private static final org.apache.thrift.protocol.TField TAG_LIST_FIELD_DESC = new org.apache.thrift.protocol.TField("tagList", org.apache.thrift.protocol.TType.LIST, (short)2);
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new createWithTags_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new createWithTags_argsTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost post; // required
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      POST((short)1, "post"),
-      TAG_LIST((short)2, "tagList");
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -4168,10 +4175,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // POST
-            return POST;
-          case 2: // TAG_LIST
-            return TAG_LIST;
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -4215,11 +4220,8 @@ public class PostService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.POST, new org.apache.thrift.meta_data.FieldMetaData("post", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class)));
-      tmpMap.put(_Fields.TAG_LIST, new org.apache.thrift.meta_data.FieldMetaData("tagList", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TTag.class))));
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(createWithTags_args.class, metaDataMap);
     }
@@ -4228,27 +4230,18 @@ public class PostService {
     }
 
     public createWithTags_args(
-      com.jnudeveloper.blog.thriftgen.domain.TPost post,
-      java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList)
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
     {
       this();
-      this.post = post;
-      this.tagList = tagList;
+      this.req = req;
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public createWithTags_args(createWithTags_args other) {
-      if (other.isSetPost()) {
-        this.post = new com.jnudeveloper.blog.thriftgen.domain.TPost(other.post);
-      }
-      if (other.isSetTagList()) {
-        java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> __this__tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>(other.tagList.size());
-        for (com.jnudeveloper.blog.thriftgen.domain.TTag other_element : other.tagList) {
-          __this__tagList.add(new com.jnudeveloper.blog.thriftgen.domain.TTag(other_element));
-        }
-        this.tagList = __this__tagList;
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
       }
     }
 
@@ -4258,88 +4251,40 @@ public class PostService {
 
     @Override
     public void clear() {
-      this.post = null;
-      this.tagList = null;
+      this.req = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost getPost() {
-      return this.post;
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
     }
 
-    public createWithTags_args setPost(com.jnudeveloper.blog.thriftgen.domain.TPost post) {
-      this.post = post;
+    public createWithTags_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
       return this;
     }
 
-    public void unsetPost() {
-      this.post = null;
+    public void unsetReq() {
+      this.req = null;
     }
 
-    /** Returns true if field post is set (has been assigned a value) and false otherwise */
-    public boolean isSetPost() {
-      return this.post != null;
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
     }
 
-    public void setPostIsSet(boolean value) {
+    public void setReqIsSet(boolean value) {
       if (!value) {
-        this.post = null;
-      }
-    }
-
-    public int getTagListSize() {
-      return (this.tagList == null) ? 0 : this.tagList.size();
-    }
-
-    public java.util.Iterator<com.jnudeveloper.blog.thriftgen.domain.TTag> getTagListIterator() {
-      return (this.tagList == null) ? null : this.tagList.iterator();
-    }
-
-    public void addToTagList(com.jnudeveloper.blog.thriftgen.domain.TTag elem) {
-      if (this.tagList == null) {
-        this.tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>();
-      }
-      this.tagList.add(elem);
-    }
-
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> getTagList() {
-      return this.tagList;
-    }
-
-    public createWithTags_args setTagList(java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) {
-      this.tagList = tagList;
-      return this;
-    }
-
-    public void unsetTagList() {
-      this.tagList = null;
-    }
-
-    /** Returns true if field tagList is set (has been assigned a value) and false otherwise */
-    public boolean isSetTagList() {
-      return this.tagList != null;
-    }
-
-    public void setTagListIsSet(boolean value) {
-      if (!value) {
-        this.tagList = null;
+        this.req = null;
       }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case POST:
+      case REQ:
         if (value == null) {
-          unsetPost();
+          unsetReq();
         } else {
-          setPost((com.jnudeveloper.blog.thriftgen.domain.TPost)value);
-        }
-        break;
-
-      case TAG_LIST:
-        if (value == null) {
-          unsetTagList();
-        } else {
-          setTagList((java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag>)value);
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
         }
         break;
 
@@ -4348,11 +4293,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case POST:
-        return getPost();
-
-      case TAG_LIST:
-        return getTagList();
+      case REQ:
+        return getReq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -4365,10 +4307,8 @@ public class PostService {
       }
 
       switch (field) {
-      case POST:
-        return isSetPost();
-      case TAG_LIST:
-        return isSetTagList();
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -4388,21 +4328,12 @@ public class PostService {
       if (this == that)
         return true;
 
-      boolean this_present_post = true && this.isSetPost();
-      boolean that_present_post = true && that.isSetPost();
-      if (this_present_post || that_present_post) {
-        if (!(this_present_post && that_present_post))
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
           return false;
-        if (!this.post.equals(that.post))
-          return false;
-      }
-
-      boolean this_present_tagList = true && this.isSetTagList();
-      boolean that_present_tagList = true && that.isSetTagList();
-      if (this_present_tagList || that_present_tagList) {
-        if (!(this_present_tagList && that_present_tagList))
-          return false;
-        if (!this.tagList.equals(that.tagList))
+        if (!this.req.equals(that.req))
           return false;
       }
 
@@ -4413,13 +4344,9 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((isSetPost()) ? 131071 : 524287);
-      if (isSetPost())
-        hashCode = hashCode * 8191 + post.hashCode();
-
-      hashCode = hashCode * 8191 + ((isSetTagList()) ? 131071 : 524287);
-      if (isSetTagList())
-        hashCode = hashCode * 8191 + tagList.hashCode();
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -4432,22 +4359,12 @@ public class PostService {
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetPost()).compareTo(other.isSetPost());
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetPost()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.post, other.post);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = java.lang.Boolean.valueOf(isSetTagList()).compareTo(other.isSetTagList());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetTagList()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.tagList, other.tagList);
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -4472,19 +4389,11 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("createWithTags_args(");
       boolean first = true;
 
-      sb.append("post:");
-      if (this.post == null) {
+      sb.append("req:");
+      if (this.req == null) {
         sb.append("null");
       } else {
-        sb.append(this.post);
-      }
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("tagList:");
-      if (this.tagList == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.tagList);
+        sb.append(this.req);
       }
       first = false;
       sb.append(")");
@@ -4494,8 +4403,8 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
-      if (post != null) {
-        post.validate();
+      if (req != null) {
+        req.validate();
       }
     }
 
@@ -4533,30 +4442,11 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // POST
+            case 1: // REQ
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-                struct.post.read(iprot);
-                struct.setPostIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 2: // TAG_LIST
-              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
-                {
-                  org.apache.thrift.protocol.TList _list16 = iprot.readListBegin();
-                  struct.tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>(_list16.size);
-                  com.jnudeveloper.blog.thriftgen.domain.TTag _elem17;
-                  for (int _i18 = 0; _i18 < _list16.size; ++_i18)
-                  {
-                    _elem17 = new com.jnudeveloper.blog.thriftgen.domain.TTag();
-                    _elem17.read(iprot);
-                    struct.tagList.add(_elem17);
-                  }
-                  iprot.readListEnd();
-                }
-                struct.setTagListIsSet(true);
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -4576,21 +4466,9 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.post != null) {
-          oprot.writeFieldBegin(POST_FIELD_DESC);
-          struct.post.write(oprot);
-          oprot.writeFieldEnd();
-        }
-        if (struct.tagList != null) {
-          oprot.writeFieldBegin(TAG_LIST_FIELD_DESC);
-          {
-            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, struct.tagList.size()));
-            for (com.jnudeveloper.blog.thriftgen.domain.TTag _iter19 : struct.tagList)
-            {
-              _iter19.write(oprot);
-            }
-            oprot.writeListEnd();
-          }
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -4611,49 +4489,23 @@ public class PostService {
       public void write(org.apache.thrift.protocol.TProtocol prot, createWithTags_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetPost()) {
+        if (struct.isSetReq()) {
           optionals.set(0);
         }
-        if (struct.isSetTagList()) {
-          optionals.set(1);
-        }
-        oprot.writeBitSet(optionals, 2);
-        if (struct.isSetPost()) {
-          struct.post.write(oprot);
-        }
-        if (struct.isSetTagList()) {
-          {
-            oprot.writeI32(struct.tagList.size());
-            for (com.jnudeveloper.blog.thriftgen.domain.TTag _iter20 : struct.tagList)
-            {
-              _iter20.write(oprot);
-            }
-          }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
         }
       }
 
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, createWithTags_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(2);
+        java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-          struct.post.read(iprot);
-          struct.setPostIsSet(true);
-        }
-        if (incoming.get(1)) {
-          {
-            org.apache.thrift.protocol.TList _list21 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, iprot.readI32());
-            struct.tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>(_list21.size);
-            com.jnudeveloper.blog.thriftgen.domain.TTag _elem22;
-            for (int _i23 = 0; _i23 < _list21.size; ++_i23)
-            {
-              _elem22 = new com.jnudeveloper.blog.thriftgen.domain.TTag();
-              _elem22.read(iprot);
-              struct.tagList.add(_elem22);
-            }
-          }
-          struct.setTagListIsSet(true);
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
         }
       }
     }
@@ -4671,7 +4523,7 @@ public class PostService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new createWithTags_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new createWithTags_resultTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -4736,7 +4588,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TCUDResult.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(createWithTags_result.class, metaDataMap);
     }
@@ -4745,7 +4597,7 @@ public class PostService {
     }
 
     public createWithTags_result(
-      com.jnudeveloper.blog.thriftgen.domain.TCUDResult success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -4756,7 +4608,7 @@ public class PostService {
      */
     public createWithTags_result(createWithTags_result other) {
       if (other.isSetSuccess()) {
-        this.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult(other.success);
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -4769,11 +4621,11 @@ public class PostService {
       this.success = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public createWithTags_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.TCUDResult success) {
+    public createWithTags_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -4799,7 +4651,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((com.jnudeveloper.blog.thriftgen.domain.TCUDResult)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -4959,7 +4811,7 @@ public class PostService {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -5018,7 +4870,7 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
@@ -5033,16 +4885,16 @@ public class PostService {
   public static class update_args implements org.apache.thrift.TBase<update_args, update_args._Fields>, java.io.Serializable, Cloneable, Comparable<update_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("update_args");
 
-    private static final org.apache.thrift.protocol.TField POST_FIELD_DESC = new org.apache.thrift.protocol.TField("post", org.apache.thrift.protocol.TType.STRUCT, (short)1);
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new update_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new update_argsTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost post; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      POST((short)1, "post");
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -5057,8 +4909,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // POST
-            return POST;
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -5102,8 +4954,8 @@ public class PostService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.POST, new org.apache.thrift.meta_data.FieldMetaData("post", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class)));
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(update_args.class, metaDataMap);
     }
@@ -5112,18 +4964,18 @@ public class PostService {
     }
 
     public update_args(
-      com.jnudeveloper.blog.thriftgen.domain.TPost post)
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
     {
       this();
-      this.post = post;
+      this.req = req;
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public update_args(update_args other) {
-      if (other.isSetPost()) {
-        this.post = new com.jnudeveloper.blog.thriftgen.domain.TPost(other.post);
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
       }
     }
 
@@ -5133,40 +4985,40 @@ public class PostService {
 
     @Override
     public void clear() {
-      this.post = null;
+      this.req = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost getPost() {
-      return this.post;
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
     }
 
-    public update_args setPost(com.jnudeveloper.blog.thriftgen.domain.TPost post) {
-      this.post = post;
+    public update_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
       return this;
     }
 
-    public void unsetPost() {
-      this.post = null;
+    public void unsetReq() {
+      this.req = null;
     }
 
-    /** Returns true if field post is set (has been assigned a value) and false otherwise */
-    public boolean isSetPost() {
-      return this.post != null;
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
     }
 
-    public void setPostIsSet(boolean value) {
+    public void setReqIsSet(boolean value) {
       if (!value) {
-        this.post = null;
+        this.req = null;
       }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case POST:
+      case REQ:
         if (value == null) {
-          unsetPost();
+          unsetReq();
         } else {
-          setPost((com.jnudeveloper.blog.thriftgen.domain.TPost)value);
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
         }
         break;
 
@@ -5175,8 +5027,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case POST:
-        return getPost();
+      case REQ:
+        return getReq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -5189,8 +5041,8 @@ public class PostService {
       }
 
       switch (field) {
-      case POST:
-        return isSetPost();
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -5210,12 +5062,12 @@ public class PostService {
       if (this == that)
         return true;
 
-      boolean this_present_post = true && this.isSetPost();
-      boolean that_present_post = true && that.isSetPost();
-      if (this_present_post || that_present_post) {
-        if (!(this_present_post && that_present_post))
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
           return false;
-        if (!this.post.equals(that.post))
+        if (!this.req.equals(that.req))
           return false;
       }
 
@@ -5226,9 +5078,9 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((isSetPost()) ? 131071 : 524287);
-      if (isSetPost())
-        hashCode = hashCode * 8191 + post.hashCode();
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -5241,12 +5093,12 @@ public class PostService {
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetPost()).compareTo(other.isSetPost());
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetPost()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.post, other.post);
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -5271,11 +5123,11 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("update_args(");
       boolean first = true;
 
-      sb.append("post:");
-      if (this.post == null) {
+      sb.append("req:");
+      if (this.req == null) {
         sb.append("null");
       } else {
-        sb.append(this.post);
+        sb.append(this.req);
       }
       first = false;
       sb.append(")");
@@ -5285,8 +5137,8 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
-      if (post != null) {
-        post.validate();
+      if (req != null) {
+        req.validate();
       }
     }
 
@@ -5324,11 +5176,11 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // POST
+            case 1: // REQ
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-                struct.post.read(iprot);
-                struct.setPostIsSet(true);
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -5348,9 +5200,9 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.post != null) {
-          oprot.writeFieldBegin(POST_FIELD_DESC);
-          struct.post.write(oprot);
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -5371,12 +5223,12 @@ public class PostService {
       public void write(org.apache.thrift.protocol.TProtocol prot, update_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetPost()) {
+        if (struct.isSetReq()) {
           optionals.set(0);
         }
         oprot.writeBitSet(optionals, 1);
-        if (struct.isSetPost()) {
-          struct.post.write(oprot);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
         }
       }
 
@@ -5385,9 +5237,9 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-          struct.post.read(iprot);
-          struct.setPostIsSet(true);
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
         }
       }
     }
@@ -5405,7 +5257,7 @@ public class PostService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new update_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new update_resultTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -5470,7 +5322,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TCUDResult.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(update_result.class, metaDataMap);
     }
@@ -5479,7 +5331,7 @@ public class PostService {
     }
 
     public update_result(
-      com.jnudeveloper.blog.thriftgen.domain.TCUDResult success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -5490,7 +5342,7 @@ public class PostService {
      */
     public update_result(update_result other) {
       if (other.isSetSuccess()) {
-        this.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult(other.success);
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -5503,11 +5355,11 @@ public class PostService {
       this.success = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public update_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.TCUDResult success) {
+    public update_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -5533,7 +5385,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((com.jnudeveloper.blog.thriftgen.domain.TCUDResult)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -5693,7 +5545,7 @@ public class PostService {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -5752,7 +5604,7 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
@@ -5767,19 +5619,16 @@ public class PostService {
   public static class updateWithTags_args implements org.apache.thrift.TBase<updateWithTags_args, updateWithTags_args._Fields>, java.io.Serializable, Cloneable, Comparable<updateWithTags_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("updateWithTags_args");
 
-    private static final org.apache.thrift.protocol.TField POST_FIELD_DESC = new org.apache.thrift.protocol.TField("post", org.apache.thrift.protocol.TType.STRUCT, (short)1);
-    private static final org.apache.thrift.protocol.TField TAG_LIST_FIELD_DESC = new org.apache.thrift.protocol.TField("tagList", org.apache.thrift.protocol.TType.LIST, (short)2);
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new updateWithTags_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new updateWithTags_argsTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost post; // required
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      POST((short)1, "post"),
-      TAG_LIST((short)2, "tagList");
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -5794,10 +5643,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // POST
-            return POST;
-          case 2: // TAG_LIST
-            return TAG_LIST;
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -5841,11 +5688,8 @@ public class PostService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.POST, new org.apache.thrift.meta_data.FieldMetaData("post", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TPost.class)));
-      tmpMap.put(_Fields.TAG_LIST, new org.apache.thrift.meta_data.FieldMetaData("tagList", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TTag.class))));
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(updateWithTags_args.class, metaDataMap);
     }
@@ -5854,27 +5698,18 @@ public class PostService {
     }
 
     public updateWithTags_args(
-      com.jnudeveloper.blog.thriftgen.domain.TPost post,
-      java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList)
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
     {
       this();
-      this.post = post;
-      this.tagList = tagList;
+      this.req = req;
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public updateWithTags_args(updateWithTags_args other) {
-      if (other.isSetPost()) {
-        this.post = new com.jnudeveloper.blog.thriftgen.domain.TPost(other.post);
-      }
-      if (other.isSetTagList()) {
-        java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> __this__tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>(other.tagList.size());
-        for (com.jnudeveloper.blog.thriftgen.domain.TTag other_element : other.tagList) {
-          __this__tagList.add(new com.jnudeveloper.blog.thriftgen.domain.TTag(other_element));
-        }
-        this.tagList = __this__tagList;
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
       }
     }
 
@@ -5884,88 +5719,40 @@ public class PostService {
 
     @Override
     public void clear() {
-      this.post = null;
-      this.tagList = null;
+      this.req = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TPost getPost() {
-      return this.post;
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
     }
 
-    public updateWithTags_args setPost(com.jnudeveloper.blog.thriftgen.domain.TPost post) {
-      this.post = post;
+    public updateWithTags_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
       return this;
     }
 
-    public void unsetPost() {
-      this.post = null;
+    public void unsetReq() {
+      this.req = null;
     }
 
-    /** Returns true if field post is set (has been assigned a value) and false otherwise */
-    public boolean isSetPost() {
-      return this.post != null;
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
     }
 
-    public void setPostIsSet(boolean value) {
+    public void setReqIsSet(boolean value) {
       if (!value) {
-        this.post = null;
-      }
-    }
-
-    public int getTagListSize() {
-      return (this.tagList == null) ? 0 : this.tagList.size();
-    }
-
-    public java.util.Iterator<com.jnudeveloper.blog.thriftgen.domain.TTag> getTagListIterator() {
-      return (this.tagList == null) ? null : this.tagList.iterator();
-    }
-
-    public void addToTagList(com.jnudeveloper.blog.thriftgen.domain.TTag elem) {
-      if (this.tagList == null) {
-        this.tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>();
-      }
-      this.tagList.add(elem);
-    }
-
-    public java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> getTagList() {
-      return this.tagList;
-    }
-
-    public updateWithTags_args setTagList(java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag> tagList) {
-      this.tagList = tagList;
-      return this;
-    }
-
-    public void unsetTagList() {
-      this.tagList = null;
-    }
-
-    /** Returns true if field tagList is set (has been assigned a value) and false otherwise */
-    public boolean isSetTagList() {
-      return this.tagList != null;
-    }
-
-    public void setTagListIsSet(boolean value) {
-      if (!value) {
-        this.tagList = null;
+        this.req = null;
       }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case POST:
+      case REQ:
         if (value == null) {
-          unsetPost();
+          unsetReq();
         } else {
-          setPost((com.jnudeveloper.blog.thriftgen.domain.TPost)value);
-        }
-        break;
-
-      case TAG_LIST:
-        if (value == null) {
-          unsetTagList();
-        } else {
-          setTagList((java.util.List<com.jnudeveloper.blog.thriftgen.domain.TTag>)value);
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
         }
         break;
 
@@ -5974,11 +5761,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case POST:
-        return getPost();
-
-      case TAG_LIST:
-        return getTagList();
+      case REQ:
+        return getReq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -5991,10 +5775,8 @@ public class PostService {
       }
 
       switch (field) {
-      case POST:
-        return isSetPost();
-      case TAG_LIST:
-        return isSetTagList();
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -6014,21 +5796,12 @@ public class PostService {
       if (this == that)
         return true;
 
-      boolean this_present_post = true && this.isSetPost();
-      boolean that_present_post = true && that.isSetPost();
-      if (this_present_post || that_present_post) {
-        if (!(this_present_post && that_present_post))
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
           return false;
-        if (!this.post.equals(that.post))
-          return false;
-      }
-
-      boolean this_present_tagList = true && this.isSetTagList();
-      boolean that_present_tagList = true && that.isSetTagList();
-      if (this_present_tagList || that_present_tagList) {
-        if (!(this_present_tagList && that_present_tagList))
-          return false;
-        if (!this.tagList.equals(that.tagList))
+        if (!this.req.equals(that.req))
           return false;
       }
 
@@ -6039,13 +5812,9 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((isSetPost()) ? 131071 : 524287);
-      if (isSetPost())
-        hashCode = hashCode * 8191 + post.hashCode();
-
-      hashCode = hashCode * 8191 + ((isSetTagList()) ? 131071 : 524287);
-      if (isSetTagList())
-        hashCode = hashCode * 8191 + tagList.hashCode();
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -6058,22 +5827,12 @@ public class PostService {
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetPost()).compareTo(other.isSetPost());
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetPost()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.post, other.post);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = java.lang.Boolean.valueOf(isSetTagList()).compareTo(other.isSetTagList());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetTagList()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.tagList, other.tagList);
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -6098,19 +5857,11 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("updateWithTags_args(");
       boolean first = true;
 
-      sb.append("post:");
-      if (this.post == null) {
+      sb.append("req:");
+      if (this.req == null) {
         sb.append("null");
       } else {
-        sb.append(this.post);
-      }
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("tagList:");
-      if (this.tagList == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.tagList);
+        sb.append(this.req);
       }
       first = false;
       sb.append(")");
@@ -6120,8 +5871,8 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
-      if (post != null) {
-        post.validate();
+      if (req != null) {
+        req.validate();
       }
     }
 
@@ -6159,30 +5910,11 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // POST
+            case 1: // REQ
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-                struct.post.read(iprot);
-                struct.setPostIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 2: // TAG_LIST
-              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
-                {
-                  org.apache.thrift.protocol.TList _list24 = iprot.readListBegin();
-                  struct.tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>(_list24.size);
-                  com.jnudeveloper.blog.thriftgen.domain.TTag _elem25;
-                  for (int _i26 = 0; _i26 < _list24.size; ++_i26)
-                  {
-                    _elem25 = new com.jnudeveloper.blog.thriftgen.domain.TTag();
-                    _elem25.read(iprot);
-                    struct.tagList.add(_elem25);
-                  }
-                  iprot.readListEnd();
-                }
-                struct.setTagListIsSet(true);
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -6202,21 +5934,9 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.post != null) {
-          oprot.writeFieldBegin(POST_FIELD_DESC);
-          struct.post.write(oprot);
-          oprot.writeFieldEnd();
-        }
-        if (struct.tagList != null) {
-          oprot.writeFieldBegin(TAG_LIST_FIELD_DESC);
-          {
-            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, struct.tagList.size()));
-            for (com.jnudeveloper.blog.thriftgen.domain.TTag _iter27 : struct.tagList)
-            {
-              _iter27.write(oprot);
-            }
-            oprot.writeListEnd();
-          }
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -6237,49 +5957,23 @@ public class PostService {
       public void write(org.apache.thrift.protocol.TProtocol prot, updateWithTags_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetPost()) {
+        if (struct.isSetReq()) {
           optionals.set(0);
         }
-        if (struct.isSetTagList()) {
-          optionals.set(1);
-        }
-        oprot.writeBitSet(optionals, 2);
-        if (struct.isSetPost()) {
-          struct.post.write(oprot);
-        }
-        if (struct.isSetTagList()) {
-          {
-            oprot.writeI32(struct.tagList.size());
-            for (com.jnudeveloper.blog.thriftgen.domain.TTag _iter28 : struct.tagList)
-            {
-              _iter28.write(oprot);
-            }
-          }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
         }
       }
 
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, updateWithTags_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(2);
+        java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.post = new com.jnudeveloper.blog.thriftgen.domain.TPost();
-          struct.post.read(iprot);
-          struct.setPostIsSet(true);
-        }
-        if (incoming.get(1)) {
-          {
-            org.apache.thrift.protocol.TList _list29 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, iprot.readI32());
-            struct.tagList = new java.util.ArrayList<com.jnudeveloper.blog.thriftgen.domain.TTag>(_list29.size);
-            com.jnudeveloper.blog.thriftgen.domain.TTag _elem30;
-            for (int _i31 = 0; _i31 < _list29.size; ++_i31)
-            {
-              _elem30 = new com.jnudeveloper.blog.thriftgen.domain.TTag();
-              _elem30.read(iprot);
-              struct.tagList.add(_elem30);
-            }
-          }
-          struct.setTagListIsSet(true);
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
         }
       }
     }
@@ -6297,7 +5991,7 @@ public class PostService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new updateWithTags_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new updateWithTags_resultTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -6362,7 +6056,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TCUDResult.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(updateWithTags_result.class, metaDataMap);
     }
@@ -6371,7 +6065,7 @@ public class PostService {
     }
 
     public updateWithTags_result(
-      com.jnudeveloper.blog.thriftgen.domain.TCUDResult success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -6382,7 +6076,7 @@ public class PostService {
      */
     public updateWithTags_result(updateWithTags_result other) {
       if (other.isSetSuccess()) {
-        this.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult(other.success);
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -6395,11 +6089,11 @@ public class PostService {
       this.success = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public updateWithTags_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.TCUDResult success) {
+    public updateWithTags_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -6425,7 +6119,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((com.jnudeveloper.blog.thriftgen.domain.TCUDResult)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -6585,7 +6279,7 @@ public class PostService {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -6644,7 +6338,7 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
@@ -6659,16 +6353,16 @@ public class PostService {
   public static class deleteById_args implements org.apache.thrift.TBase<deleteById_args, deleteById_args._Fields>, java.io.Serializable, Cloneable, Comparable<deleteById_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("deleteById_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField REQ_FIELD_DESC = new org.apache.thrift.protocol.TField("req", org.apache.thrift.protocol.TType.STRUCT, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new deleteById_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new deleteById_argsTupleSchemeFactory();
 
-    public int id; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Request req; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      ID((short)1, "id");
+      REQ((short)1, "req");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -6683,8 +6377,8 @@ public class PostService {
        */
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
-          case 1: // ID
-            return ID;
+          case 1: // REQ
+            return REQ;
           default:
             return null;
         }
@@ -6725,13 +6419,11 @@ public class PostService {
     }
 
     // isset id assignments
-    private static final int __ID_ISSET_ID = 0;
-    private byte __isset_bitfield = 0;
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      tmpMap.put(_Fields.REQ, new org.apache.thrift.meta_data.FieldMetaData("req", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Request.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(deleteById_args.class, metaDataMap);
     }
@@ -6740,19 +6432,19 @@ public class PostService {
     }
 
     public deleteById_args(
-      int id)
+      com.jnudeveloper.blog.thriftgen.domain.Request req)
     {
       this();
-      this.id = id;
-      setIdIsSet(true);
+      this.req = req;
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public deleteById_args(deleteById_args other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.id = other.id;
+      if (other.isSetReq()) {
+        this.req = new com.jnudeveloper.blog.thriftgen.domain.Request(other.req);
+      }
     }
 
     public deleteById_args deepCopy() {
@@ -6761,40 +6453,40 @@ public class PostService {
 
     @Override
     public void clear() {
-      setIdIsSet(false);
-      this.id = 0;
+      this.req = null;
     }
 
-    public int getId() {
-      return this.id;
+    public com.jnudeveloper.blog.thriftgen.domain.Request getReq() {
+      return this.req;
     }
 
-    public deleteById_args setId(int id) {
-      this.id = id;
-      setIdIsSet(true);
+    public deleteById_args setReq(com.jnudeveloper.blog.thriftgen.domain.Request req) {
+      this.req = req;
       return this;
     }
 
-    public void unsetId() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
+    public void unsetReq() {
+      this.req = null;
     }
 
-    /** Returns true if field id is set (has been assigned a value) and false otherwise */
-    public boolean isSetId() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
+    /** Returns true if field req is set (has been assigned a value) and false otherwise */
+    public boolean isSetReq() {
+      return this.req != null;
     }
 
-    public void setIdIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
+    public void setReqIsSet(boolean value) {
+      if (!value) {
+        this.req = null;
+      }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
-      case ID:
+      case REQ:
         if (value == null) {
-          unsetId();
+          unsetReq();
         } else {
-          setId((java.lang.Integer)value);
+          setReq((com.jnudeveloper.blog.thriftgen.domain.Request)value);
         }
         break;
 
@@ -6803,8 +6495,8 @@ public class PostService {
 
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
-      case ID:
-        return getId();
+      case REQ:
+        return getReq();
 
       }
       throw new java.lang.IllegalStateException();
@@ -6817,8 +6509,8 @@ public class PostService {
       }
 
       switch (field) {
-      case ID:
-        return isSetId();
+      case REQ:
+        return isSetReq();
       }
       throw new java.lang.IllegalStateException();
     }
@@ -6838,12 +6530,12 @@ public class PostService {
       if (this == that)
         return true;
 
-      boolean this_present_id = true;
-      boolean that_present_id = true;
-      if (this_present_id || that_present_id) {
-        if (!(this_present_id && that_present_id))
+      boolean this_present_req = true && this.isSetReq();
+      boolean that_present_req = true && that.isSetReq();
+      if (this_present_req || that_present_req) {
+        if (!(this_present_req && that_present_req))
           return false;
-        if (this.id != that.id)
+        if (!this.req.equals(that.req))
           return false;
       }
 
@@ -6854,7 +6546,9 @@ public class PostService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + ((isSetReq()) ? 131071 : 524287);
+      if (isSetReq())
+        hashCode = hashCode * 8191 + req.hashCode();
 
       return hashCode;
     }
@@ -6867,12 +6561,12 @@ public class PostService {
 
       int lastComparison = 0;
 
-      lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
+      lastComparison = java.lang.Boolean.valueOf(isSetReq()).compareTo(other.isSetReq());
       if (lastComparison != 0) {
         return lastComparison;
       }
-      if (isSetId()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
+      if (isSetReq()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.req, other.req);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -6897,8 +6591,12 @@ public class PostService {
       java.lang.StringBuilder sb = new java.lang.StringBuilder("deleteById_args(");
       boolean first = true;
 
-      sb.append("id:");
-      sb.append(this.id);
+      sb.append("req:");
+      if (this.req == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.req);
+      }
       first = false;
       sb.append(")");
       return sb.toString();
@@ -6907,6 +6605,9 @@ public class PostService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
+      if (req != null) {
+        req.validate();
+      }
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
@@ -6919,8 +6620,6 @@ public class PostService {
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
         throw new java.io.IOException(te);
@@ -6945,10 +6644,11 @@ public class PostService {
             break;
           }
           switch (schemeField.id) {
-            case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
-                struct.setIdIsSet(true);
+            case 1: // REQ
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+                struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+                struct.req.read(iprot);
+                struct.setReqIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
@@ -6968,9 +6668,11 @@ public class PostService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
-        oprot.writeFieldEnd();
+        if (struct.req != null) {
+          oprot.writeFieldBegin(REQ_FIELD_DESC);
+          struct.req.write(oprot);
+          oprot.writeFieldEnd();
+        }
         oprot.writeFieldStop();
         oprot.writeStructEnd();
       }
@@ -6989,12 +6691,12 @@ public class PostService {
       public void write(org.apache.thrift.protocol.TProtocol prot, deleteById_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetId()) {
+        if (struct.isSetReq()) {
           optionals.set(0);
         }
         oprot.writeBitSet(optionals, 1);
-        if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+        if (struct.isSetReq()) {
+          struct.req.write(oprot);
         }
       }
 
@@ -7003,8 +6705,9 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
-          struct.setIdIsSet(true);
+          struct.req = new com.jnudeveloper.blog.thriftgen.domain.Request();
+          struct.req.read(iprot);
+          struct.setReqIsSet(true);
         }
       }
     }
@@ -7022,7 +6725,7 @@ public class PostService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new deleteById_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new deleteById_resultTupleSchemeFactory();
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult success; // required
+    public com.jnudeveloper.blog.thriftgen.domain.Response success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -7087,7 +6790,7 @@ public class PostService {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.TCUDResult.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.jnudeveloper.blog.thriftgen.domain.Response.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(deleteById_result.class, metaDataMap);
     }
@@ -7096,7 +6799,7 @@ public class PostService {
     }
 
     public deleteById_result(
-      com.jnudeveloper.blog.thriftgen.domain.TCUDResult success)
+      com.jnudeveloper.blog.thriftgen.domain.Response success)
     {
       this();
       this.success = success;
@@ -7107,7 +6810,7 @@ public class PostService {
      */
     public deleteById_result(deleteById_result other) {
       if (other.isSetSuccess()) {
-        this.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult(other.success);
+        this.success = new com.jnudeveloper.blog.thriftgen.domain.Response(other.success);
       }
     }
 
@@ -7120,11 +6823,11 @@ public class PostService {
       this.success = null;
     }
 
-    public com.jnudeveloper.blog.thriftgen.domain.TCUDResult getSuccess() {
+    public com.jnudeveloper.blog.thriftgen.domain.Response getSuccess() {
       return this.success;
     }
 
-    public deleteById_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.TCUDResult success) {
+    public deleteById_result setSuccess(com.jnudeveloper.blog.thriftgen.domain.Response success) {
       this.success = success;
       return this;
     }
@@ -7150,7 +6853,7 @@ public class PostService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((com.jnudeveloper.blog.thriftgen.domain.TCUDResult)value);
+          setSuccess((com.jnudeveloper.blog.thriftgen.domain.Response)value);
         }
         break;
 
@@ -7310,7 +7013,7 @@ public class PostService {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+                struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -7369,7 +7072,7 @@ public class PostService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new com.jnudeveloper.blog.thriftgen.domain.TCUDResult();
+          struct.success = new com.jnudeveloper.blog.thriftgen.domain.Response();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
