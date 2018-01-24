@@ -12,39 +12,39 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
   private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("TComment");
 
   private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-  private static final org.apache.thrift.protocol.TField POST_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("post_id", org.apache.thrift.protocol.TType.I32, (short)2);
-  private static final org.apache.thrift.protocol.TField PARENT_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("parent_id", org.apache.thrift.protocol.TType.I32, (short)3);
+  private static final org.apache.thrift.protocol.TField POST_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("postId", org.apache.thrift.protocol.TType.I32, (short)2);
+  private static final org.apache.thrift.protocol.TField PARENT_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("parentId", org.apache.thrift.protocol.TType.I32, (short)3);
   private static final org.apache.thrift.protocol.TField STATUS_FIELD_DESC = new org.apache.thrift.protocol.TField("status", org.apache.thrift.protocol.TType.I32, (short)4);
   private static final org.apache.thrift.protocol.TField CONTENT_FIELD_DESC = new org.apache.thrift.protocol.TField("content", org.apache.thrift.protocol.TType.STRING, (short)5);
-  private static final org.apache.thrift.protocol.TField CREATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("create_time", org.apache.thrift.protocol.TType.I32, (short)6);
-  private static final org.apache.thrift.protocol.TField UPDATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("update_time", org.apache.thrift.protocol.TType.I32, (short)7);
-  private static final org.apache.thrift.protocol.TField AUTHOR_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("author_id", org.apache.thrift.protocol.TType.I32, (short)8);
-  private static final org.apache.thrift.protocol.TField APPROVE_NUM_FIELD_DESC = new org.apache.thrift.protocol.TField("approve_num", org.apache.thrift.protocol.TType.I32, (short)9);
+  private static final org.apache.thrift.protocol.TField CREATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("createTime", org.apache.thrift.protocol.TType.I32, (short)6);
+  private static final org.apache.thrift.protocol.TField UPDATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("updateTime", org.apache.thrift.protocol.TType.I32, (short)7);
+  private static final org.apache.thrift.protocol.TField AUTHOR_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("authorId", org.apache.thrift.protocol.TType.I32, (short)8);
+  private static final org.apache.thrift.protocol.TField APPROVE_NUM_FIELD_DESC = new org.apache.thrift.protocol.TField("approveNum", org.apache.thrift.protocol.TType.I32, (short)9);
 
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new TCommentStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TCommentTupleSchemeFactory();
 
   public int id; // required
-  public int post_id; // required
-  public int parent_id; // required
+  public int postId; // required
+  public int parentId; // required
   public int status; // required
   public java.lang.String content; // required
-  public int create_time; // required
-  public int update_time; // required
-  public int author_id; // required
-  public int approve_num; // required
+  public int createTime; // required
+  public int updateTime; // required
+  public int authorId; // required
+  public int approveNum; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     ID((short)1, "id"),
-    POST_ID((short)2, "post_id"),
-    PARENT_ID((short)3, "parent_id"),
+    POST_ID((short)2, "postId"),
+    PARENT_ID((short)3, "parentId"),
     STATUS((short)4, "status"),
     CONTENT((short)5, "content"),
-    CREATE_TIME((short)6, "create_time"),
-    UPDATE_TIME((short)7, "update_time"),
-    AUTHOR_ID((short)8, "author_id"),
-    APPROVE_NUM((short)9, "approve_num");
+    CREATE_TIME((short)6, "createTime"),
+    UPDATE_TIME((short)7, "updateTime"),
+    AUTHOR_ID((short)8, "authorId"),
+    APPROVE_NUM((short)9, "approveNum");
 
     private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -118,34 +118,34 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
 
   // isset id assignments
   private static final int __ID_ISSET_ID = 0;
-  private static final int __POST_ID_ISSET_ID = 1;
-  private static final int __PARENT_ID_ISSET_ID = 2;
+  private static final int __POSTID_ISSET_ID = 1;
+  private static final int __PARENTID_ISSET_ID = 2;
   private static final int __STATUS_ISSET_ID = 3;
-  private static final int __CREATE_TIME_ISSET_ID = 4;
-  private static final int __UPDATE_TIME_ISSET_ID = 5;
-  private static final int __AUTHOR_ID_ISSET_ID = 6;
-  private static final int __APPROVE_NUM_ISSET_ID = 7;
+  private static final int __CREATETIME_ISSET_ID = 4;
+  private static final int __UPDATETIME_ISSET_ID = 5;
+  private static final int __AUTHORID_ISSET_ID = 6;
+  private static final int __APPROVENUM_ISSET_ID = 7;
   private byte __isset_bitfield = 0;
   public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
     tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.POST_ID, new org.apache.thrift.meta_data.FieldMetaData("post_id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.POST_ID, new org.apache.thrift.meta_data.FieldMetaData("postId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.PARENT_ID, new org.apache.thrift.meta_data.FieldMetaData("parent_id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.PARENT_ID, new org.apache.thrift.meta_data.FieldMetaData("parentId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     tmpMap.put(_Fields.STATUS, new org.apache.thrift.meta_data.FieldMetaData("status", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     tmpMap.put(_Fields.CONTENT, new org.apache.thrift.meta_data.FieldMetaData("content", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.CREATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("create_time", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.CREATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("createTime", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.UPDATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("update_time", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.UPDATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("updateTime", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.AUTHOR_ID, new org.apache.thrift.meta_data.FieldMetaData("author_id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.AUTHOR_ID, new org.apache.thrift.meta_data.FieldMetaData("authorId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.APPROVE_NUM, new org.apache.thrift.meta_data.FieldMetaData("approve_num", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.APPROVE_NUM, new org.apache.thrift.meta_data.FieldMetaData("approveNum", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(TComment.class, metaDataMap);
@@ -156,33 +156,33 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
 
   public TComment(
     int id,
-    int post_id,
-    int parent_id,
+    int postId,
+    int parentId,
     int status,
     java.lang.String content,
-    int create_time,
-    int update_time,
-    int author_id,
-    int approve_num)
+    int createTime,
+    int updateTime,
+    int authorId,
+    int approveNum)
   {
     this();
     this.id = id;
     setIdIsSet(true);
-    this.post_id = post_id;
-    setPost_idIsSet(true);
-    this.parent_id = parent_id;
-    setParent_idIsSet(true);
+    this.postId = postId;
+    setPostIdIsSet(true);
+    this.parentId = parentId;
+    setParentIdIsSet(true);
     this.status = status;
     setStatusIsSet(true);
     this.content = content;
-    this.create_time = create_time;
-    setCreate_timeIsSet(true);
-    this.update_time = update_time;
-    setUpdate_timeIsSet(true);
-    this.author_id = author_id;
-    setAuthor_idIsSet(true);
-    this.approve_num = approve_num;
-    setApprove_numIsSet(true);
+    this.createTime = createTime;
+    setCreateTimeIsSet(true);
+    this.updateTime = updateTime;
+    setUpdateTimeIsSet(true);
+    this.authorId = authorId;
+    setAuthorIdIsSet(true);
+    this.approveNum = approveNum;
+    setApproveNumIsSet(true);
   }
 
   /**
@@ -191,16 +191,16 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
   public TComment(TComment other) {
     __isset_bitfield = other.__isset_bitfield;
     this.id = other.id;
-    this.post_id = other.post_id;
-    this.parent_id = other.parent_id;
+    this.postId = other.postId;
+    this.parentId = other.parentId;
     this.status = other.status;
     if (other.isSetContent()) {
       this.content = other.content;
     }
-    this.create_time = other.create_time;
-    this.update_time = other.update_time;
-    this.author_id = other.author_id;
-    this.approve_num = other.approve_num;
+    this.createTime = other.createTime;
+    this.updateTime = other.updateTime;
+    this.authorId = other.authorId;
+    this.approveNum = other.approveNum;
   }
 
   public TComment deepCopy() {
@@ -211,21 +211,21 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
   public void clear() {
     setIdIsSet(false);
     this.id = 0;
-    setPost_idIsSet(false);
-    this.post_id = 0;
-    setParent_idIsSet(false);
-    this.parent_id = 0;
+    setPostIdIsSet(false);
+    this.postId = 0;
+    setParentIdIsSet(false);
+    this.parentId = 0;
     setStatusIsSet(false);
     this.status = 0;
     this.content = null;
-    setCreate_timeIsSet(false);
-    this.create_time = 0;
-    setUpdate_timeIsSet(false);
-    this.update_time = 0;
-    setAuthor_idIsSet(false);
-    this.author_id = 0;
-    setApprove_numIsSet(false);
-    this.approve_num = 0;
+    setCreateTimeIsSet(false);
+    this.createTime = 0;
+    setUpdateTimeIsSet(false);
+    this.updateTime = 0;
+    setAuthorIdIsSet(false);
+    this.authorId = 0;
+    setApproveNumIsSet(false);
+    this.approveNum = 0;
   }
 
   public int getId() {
@@ -251,50 +251,50 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
     __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
   }
 
-  public int getPost_id() {
-    return this.post_id;
+  public int getPostId() {
+    return this.postId;
   }
 
-  public TComment setPost_id(int post_id) {
-    this.post_id = post_id;
-    setPost_idIsSet(true);
+  public TComment setPostId(int postId) {
+    this.postId = postId;
+    setPostIdIsSet(true);
     return this;
   }
 
-  public void unsetPost_id() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __POST_ID_ISSET_ID);
+  public void unsetPostId() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __POSTID_ISSET_ID);
   }
 
-  /** Returns true if field post_id is set (has been assigned a value) and false otherwise */
-  public boolean isSetPost_id() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __POST_ID_ISSET_ID);
+  /** Returns true if field postId is set (has been assigned a value) and false otherwise */
+  public boolean isSetPostId() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __POSTID_ISSET_ID);
   }
 
-  public void setPost_idIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __POST_ID_ISSET_ID, value);
+  public void setPostIdIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __POSTID_ISSET_ID, value);
   }
 
-  public int getParent_id() {
-    return this.parent_id;
+  public int getParentId() {
+    return this.parentId;
   }
 
-  public TComment setParent_id(int parent_id) {
-    this.parent_id = parent_id;
-    setParent_idIsSet(true);
+  public TComment setParentId(int parentId) {
+    this.parentId = parentId;
+    setParentIdIsSet(true);
     return this;
   }
 
-  public void unsetParent_id() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __PARENT_ID_ISSET_ID);
+  public void unsetParentId() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __PARENTID_ISSET_ID);
   }
 
-  /** Returns true if field parent_id is set (has been assigned a value) and false otherwise */
-  public boolean isSetParent_id() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __PARENT_ID_ISSET_ID);
+  /** Returns true if field parentId is set (has been assigned a value) and false otherwise */
+  public boolean isSetParentId() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __PARENTID_ISSET_ID);
   }
 
-  public void setParent_idIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __PARENT_ID_ISSET_ID, value);
+  public void setParentIdIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __PARENTID_ISSET_ID, value);
   }
 
   public int getStatus() {
@@ -344,96 +344,96 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
     }
   }
 
-  public int getCreate_time() {
-    return this.create_time;
+  public int getCreateTime() {
+    return this.createTime;
   }
 
-  public TComment setCreate_time(int create_time) {
-    this.create_time = create_time;
-    setCreate_timeIsSet(true);
+  public TComment setCreateTime(int createTime) {
+    this.createTime = createTime;
+    setCreateTimeIsSet(true);
     return this;
   }
 
-  public void unsetCreate_time() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __CREATE_TIME_ISSET_ID);
+  public void unsetCreateTime() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __CREATETIME_ISSET_ID);
   }
 
-  /** Returns true if field create_time is set (has been assigned a value) and false otherwise */
-  public boolean isSetCreate_time() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __CREATE_TIME_ISSET_ID);
+  /** Returns true if field createTime is set (has been assigned a value) and false otherwise */
+  public boolean isSetCreateTime() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __CREATETIME_ISSET_ID);
   }
 
-  public void setCreate_timeIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __CREATE_TIME_ISSET_ID, value);
+  public void setCreateTimeIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __CREATETIME_ISSET_ID, value);
   }
 
-  public int getUpdate_time() {
-    return this.update_time;
+  public int getUpdateTime() {
+    return this.updateTime;
   }
 
-  public TComment setUpdate_time(int update_time) {
-    this.update_time = update_time;
-    setUpdate_timeIsSet(true);
+  public TComment setUpdateTime(int updateTime) {
+    this.updateTime = updateTime;
+    setUpdateTimeIsSet(true);
     return this;
   }
 
-  public void unsetUpdate_time() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __UPDATE_TIME_ISSET_ID);
+  public void unsetUpdateTime() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __UPDATETIME_ISSET_ID);
   }
 
-  /** Returns true if field update_time is set (has been assigned a value) and false otherwise */
-  public boolean isSetUpdate_time() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __UPDATE_TIME_ISSET_ID);
+  /** Returns true if field updateTime is set (has been assigned a value) and false otherwise */
+  public boolean isSetUpdateTime() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __UPDATETIME_ISSET_ID);
   }
 
-  public void setUpdate_timeIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __UPDATE_TIME_ISSET_ID, value);
+  public void setUpdateTimeIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __UPDATETIME_ISSET_ID, value);
   }
 
-  public int getAuthor_id() {
-    return this.author_id;
+  public int getAuthorId() {
+    return this.authorId;
   }
 
-  public TComment setAuthor_id(int author_id) {
-    this.author_id = author_id;
-    setAuthor_idIsSet(true);
+  public TComment setAuthorId(int authorId) {
+    this.authorId = authorId;
+    setAuthorIdIsSet(true);
     return this;
   }
 
-  public void unsetAuthor_id() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __AUTHOR_ID_ISSET_ID);
+  public void unsetAuthorId() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __AUTHORID_ISSET_ID);
   }
 
-  /** Returns true if field author_id is set (has been assigned a value) and false otherwise */
-  public boolean isSetAuthor_id() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __AUTHOR_ID_ISSET_ID);
+  /** Returns true if field authorId is set (has been assigned a value) and false otherwise */
+  public boolean isSetAuthorId() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __AUTHORID_ISSET_ID);
   }
 
-  public void setAuthor_idIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __AUTHOR_ID_ISSET_ID, value);
+  public void setAuthorIdIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __AUTHORID_ISSET_ID, value);
   }
 
-  public int getApprove_num() {
-    return this.approve_num;
+  public int getApproveNum() {
+    return this.approveNum;
   }
 
-  public TComment setApprove_num(int approve_num) {
-    this.approve_num = approve_num;
-    setApprove_numIsSet(true);
+  public TComment setApproveNum(int approveNum) {
+    this.approveNum = approveNum;
+    setApproveNumIsSet(true);
     return this;
   }
 
-  public void unsetApprove_num() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __APPROVE_NUM_ISSET_ID);
+  public void unsetApproveNum() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __APPROVENUM_ISSET_ID);
   }
 
-  /** Returns true if field approve_num is set (has been assigned a value) and false otherwise */
-  public boolean isSetApprove_num() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __APPROVE_NUM_ISSET_ID);
+  /** Returns true if field approveNum is set (has been assigned a value) and false otherwise */
+  public boolean isSetApproveNum() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __APPROVENUM_ISSET_ID);
   }
 
-  public void setApprove_numIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __APPROVE_NUM_ISSET_ID, value);
+  public void setApproveNumIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __APPROVENUM_ISSET_ID, value);
   }
 
   public void setFieldValue(_Fields field, java.lang.Object value) {
@@ -448,17 +448,17 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
 
     case POST_ID:
       if (value == null) {
-        unsetPost_id();
+        unsetPostId();
       } else {
-        setPost_id((java.lang.Integer)value);
+        setPostId((java.lang.Integer)value);
       }
       break;
 
     case PARENT_ID:
       if (value == null) {
-        unsetParent_id();
+        unsetParentId();
       } else {
-        setParent_id((java.lang.Integer)value);
+        setParentId((java.lang.Integer)value);
       }
       break;
 
@@ -480,33 +480,33 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
 
     case CREATE_TIME:
       if (value == null) {
-        unsetCreate_time();
+        unsetCreateTime();
       } else {
-        setCreate_time((java.lang.Integer)value);
+        setCreateTime((java.lang.Integer)value);
       }
       break;
 
     case UPDATE_TIME:
       if (value == null) {
-        unsetUpdate_time();
+        unsetUpdateTime();
       } else {
-        setUpdate_time((java.lang.Integer)value);
+        setUpdateTime((java.lang.Integer)value);
       }
       break;
 
     case AUTHOR_ID:
       if (value == null) {
-        unsetAuthor_id();
+        unsetAuthorId();
       } else {
-        setAuthor_id((java.lang.Integer)value);
+        setAuthorId((java.lang.Integer)value);
       }
       break;
 
     case APPROVE_NUM:
       if (value == null) {
-        unsetApprove_num();
+        unsetApproveNum();
       } else {
-        setApprove_num((java.lang.Integer)value);
+        setApproveNum((java.lang.Integer)value);
       }
       break;
 
@@ -519,10 +519,10 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
       return getId();
 
     case POST_ID:
-      return getPost_id();
+      return getPostId();
 
     case PARENT_ID:
-      return getParent_id();
+      return getParentId();
 
     case STATUS:
       return getStatus();
@@ -531,16 +531,16 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
       return getContent();
 
     case CREATE_TIME:
-      return getCreate_time();
+      return getCreateTime();
 
     case UPDATE_TIME:
-      return getUpdate_time();
+      return getUpdateTime();
 
     case AUTHOR_ID:
-      return getAuthor_id();
+      return getAuthorId();
 
     case APPROVE_NUM:
-      return getApprove_num();
+      return getApproveNum();
 
     }
     throw new java.lang.IllegalStateException();
@@ -556,21 +556,21 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
     case ID:
       return isSetId();
     case POST_ID:
-      return isSetPost_id();
+      return isSetPostId();
     case PARENT_ID:
-      return isSetParent_id();
+      return isSetParentId();
     case STATUS:
       return isSetStatus();
     case CONTENT:
       return isSetContent();
     case CREATE_TIME:
-      return isSetCreate_time();
+      return isSetCreateTime();
     case UPDATE_TIME:
-      return isSetUpdate_time();
+      return isSetUpdateTime();
     case AUTHOR_ID:
-      return isSetAuthor_id();
+      return isSetAuthorId();
     case APPROVE_NUM:
-      return isSetApprove_num();
+      return isSetApproveNum();
     }
     throw new java.lang.IllegalStateException();
   }
@@ -599,21 +599,21 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         return false;
     }
 
-    boolean this_present_post_id = true;
-    boolean that_present_post_id = true;
-    if (this_present_post_id || that_present_post_id) {
-      if (!(this_present_post_id && that_present_post_id))
+    boolean this_present_postId = true;
+    boolean that_present_postId = true;
+    if (this_present_postId || that_present_postId) {
+      if (!(this_present_postId && that_present_postId))
         return false;
-      if (this.post_id != that.post_id)
+      if (this.postId != that.postId)
         return false;
     }
 
-    boolean this_present_parent_id = true;
-    boolean that_present_parent_id = true;
-    if (this_present_parent_id || that_present_parent_id) {
-      if (!(this_present_parent_id && that_present_parent_id))
+    boolean this_present_parentId = true;
+    boolean that_present_parentId = true;
+    if (this_present_parentId || that_present_parentId) {
+      if (!(this_present_parentId && that_present_parentId))
         return false;
-      if (this.parent_id != that.parent_id)
+      if (this.parentId != that.parentId)
         return false;
     }
 
@@ -635,39 +635,39 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         return false;
     }
 
-    boolean this_present_create_time = true;
-    boolean that_present_create_time = true;
-    if (this_present_create_time || that_present_create_time) {
-      if (!(this_present_create_time && that_present_create_time))
+    boolean this_present_createTime = true;
+    boolean that_present_createTime = true;
+    if (this_present_createTime || that_present_createTime) {
+      if (!(this_present_createTime && that_present_createTime))
         return false;
-      if (this.create_time != that.create_time)
-        return false;
-    }
-
-    boolean this_present_update_time = true;
-    boolean that_present_update_time = true;
-    if (this_present_update_time || that_present_update_time) {
-      if (!(this_present_update_time && that_present_update_time))
-        return false;
-      if (this.update_time != that.update_time)
+      if (this.createTime != that.createTime)
         return false;
     }
 
-    boolean this_present_author_id = true;
-    boolean that_present_author_id = true;
-    if (this_present_author_id || that_present_author_id) {
-      if (!(this_present_author_id && that_present_author_id))
+    boolean this_present_updateTime = true;
+    boolean that_present_updateTime = true;
+    if (this_present_updateTime || that_present_updateTime) {
+      if (!(this_present_updateTime && that_present_updateTime))
         return false;
-      if (this.author_id != that.author_id)
+      if (this.updateTime != that.updateTime)
         return false;
     }
 
-    boolean this_present_approve_num = true;
-    boolean that_present_approve_num = true;
-    if (this_present_approve_num || that_present_approve_num) {
-      if (!(this_present_approve_num && that_present_approve_num))
+    boolean this_present_authorId = true;
+    boolean that_present_authorId = true;
+    if (this_present_authorId || that_present_authorId) {
+      if (!(this_present_authorId && that_present_authorId))
         return false;
-      if (this.approve_num != that.approve_num)
+      if (this.authorId != that.authorId)
+        return false;
+    }
+
+    boolean this_present_approveNum = true;
+    boolean that_present_approveNum = true;
+    if (this_present_approveNum || that_present_approveNum) {
+      if (!(this_present_approveNum && that_present_approveNum))
+        return false;
+      if (this.approveNum != that.approveNum)
         return false;
     }
 
@@ -680,9 +680,9 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
 
     hashCode = hashCode * 8191 + id;
 
-    hashCode = hashCode * 8191 + post_id;
+    hashCode = hashCode * 8191 + postId;
 
-    hashCode = hashCode * 8191 + parent_id;
+    hashCode = hashCode * 8191 + parentId;
 
     hashCode = hashCode * 8191 + status;
 
@@ -690,13 +690,13 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
     if (isSetContent())
       hashCode = hashCode * 8191 + content.hashCode();
 
-    hashCode = hashCode * 8191 + create_time;
+    hashCode = hashCode * 8191 + createTime;
 
-    hashCode = hashCode * 8191 + update_time;
+    hashCode = hashCode * 8191 + updateTime;
 
-    hashCode = hashCode * 8191 + author_id;
+    hashCode = hashCode * 8191 + authorId;
 
-    hashCode = hashCode * 8191 + approve_num;
+    hashCode = hashCode * 8191 + approveNum;
 
     return hashCode;
   }
@@ -719,22 +719,22 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetPost_id()).compareTo(other.isSetPost_id());
+    lastComparison = java.lang.Boolean.valueOf(isSetPostId()).compareTo(other.isSetPostId());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetPost_id()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.post_id, other.post_id);
+    if (isSetPostId()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.postId, other.postId);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetParent_id()).compareTo(other.isSetParent_id());
+    lastComparison = java.lang.Boolean.valueOf(isSetParentId()).compareTo(other.isSetParentId());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetParent_id()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.parent_id, other.parent_id);
+    if (isSetParentId()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.parentId, other.parentId);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -759,42 +759,42 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetCreate_time()).compareTo(other.isSetCreate_time());
+    lastComparison = java.lang.Boolean.valueOf(isSetCreateTime()).compareTo(other.isSetCreateTime());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetCreate_time()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.create_time, other.create_time);
+    if (isSetCreateTime()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createTime, other.createTime);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetUpdate_time()).compareTo(other.isSetUpdate_time());
+    lastComparison = java.lang.Boolean.valueOf(isSetUpdateTime()).compareTo(other.isSetUpdateTime());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetUpdate_time()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.update_time, other.update_time);
+    if (isSetUpdateTime()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.updateTime, other.updateTime);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetAuthor_id()).compareTo(other.isSetAuthor_id());
+    lastComparison = java.lang.Boolean.valueOf(isSetAuthorId()).compareTo(other.isSetAuthorId());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetAuthor_id()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.author_id, other.author_id);
+    if (isSetAuthorId()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.authorId, other.authorId);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetApprove_num()).compareTo(other.isSetApprove_num());
+    lastComparison = java.lang.Boolean.valueOf(isSetApproveNum()).compareTo(other.isSetApproveNum());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetApprove_num()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.approve_num, other.approve_num);
+    if (isSetApproveNum()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.approveNum, other.approveNum);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -823,12 +823,12 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
     sb.append(this.id);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("post_id:");
-    sb.append(this.post_id);
+    sb.append("postId:");
+    sb.append(this.postId);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("parent_id:");
-    sb.append(this.parent_id);
+    sb.append("parentId:");
+    sb.append(this.parentId);
     first = false;
     if (!first) sb.append(", ");
     sb.append("status:");
@@ -843,20 +843,20 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("create_time:");
-    sb.append(this.create_time);
+    sb.append("createTime:");
+    sb.append(this.createTime);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("update_time:");
-    sb.append(this.update_time);
+    sb.append("updateTime:");
+    sb.append(this.updateTime);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("author_id:");
-    sb.append(this.author_id);
+    sb.append("authorId:");
+    sb.append(this.authorId);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("approve_num:");
-    sb.append(this.approve_num);
+    sb.append("approveNum:");
+    sb.append(this.approveNum);
     first = false;
     sb.append(")");
     return sb.toString();
@@ -913,16 +913,16 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
             break;
           case 2: // POST_ID
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.post_id = iprot.readI32();
-              struct.setPost_idIsSet(true);
+              struct.postId = iprot.readI32();
+              struct.setPostIdIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
           case 3: // PARENT_ID
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.parent_id = iprot.readI32();
-              struct.setParent_idIsSet(true);
+              struct.parentId = iprot.readI32();
+              struct.setParentIdIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -945,32 +945,32 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
             break;
           case 6: // CREATE_TIME
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.create_time = iprot.readI32();
-              struct.setCreate_timeIsSet(true);
+              struct.createTime = iprot.readI32();
+              struct.setCreateTimeIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
           case 7: // UPDATE_TIME
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.update_time = iprot.readI32();
-              struct.setUpdate_timeIsSet(true);
+              struct.updateTime = iprot.readI32();
+              struct.setUpdateTimeIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
           case 8: // AUTHOR_ID
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.author_id = iprot.readI32();
-              struct.setAuthor_idIsSet(true);
+              struct.authorId = iprot.readI32();
+              struct.setAuthorIdIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
           case 9: // APPROVE_NUM
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.approve_num = iprot.readI32();
-              struct.setApprove_numIsSet(true);
+              struct.approveNum = iprot.readI32();
+              struct.setApproveNumIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -994,10 +994,10 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
       oprot.writeI32(struct.id);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(POST_ID_FIELD_DESC);
-      oprot.writeI32(struct.post_id);
+      oprot.writeI32(struct.postId);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(PARENT_ID_FIELD_DESC);
-      oprot.writeI32(struct.parent_id);
+      oprot.writeI32(struct.parentId);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(STATUS_FIELD_DESC);
       oprot.writeI32(struct.status);
@@ -1008,16 +1008,16 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         oprot.writeFieldEnd();
       }
       oprot.writeFieldBegin(CREATE_TIME_FIELD_DESC);
-      oprot.writeI32(struct.create_time);
+      oprot.writeI32(struct.createTime);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(UPDATE_TIME_FIELD_DESC);
-      oprot.writeI32(struct.update_time);
+      oprot.writeI32(struct.updateTime);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(AUTHOR_ID_FIELD_DESC);
-      oprot.writeI32(struct.author_id);
+      oprot.writeI32(struct.authorId);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(APPROVE_NUM_FIELD_DESC);
-      oprot.writeI32(struct.approve_num);
+      oprot.writeI32(struct.approveNum);
       oprot.writeFieldEnd();
       oprot.writeFieldStop();
       oprot.writeStructEnd();
@@ -1040,10 +1040,10 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
       if (struct.isSetId()) {
         optionals.set(0);
       }
-      if (struct.isSetPost_id()) {
+      if (struct.isSetPostId()) {
         optionals.set(1);
       }
-      if (struct.isSetParent_id()) {
+      if (struct.isSetParentId()) {
         optionals.set(2);
       }
       if (struct.isSetStatus()) {
@@ -1052,27 +1052,27 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
       if (struct.isSetContent()) {
         optionals.set(4);
       }
-      if (struct.isSetCreate_time()) {
+      if (struct.isSetCreateTime()) {
         optionals.set(5);
       }
-      if (struct.isSetUpdate_time()) {
+      if (struct.isSetUpdateTime()) {
         optionals.set(6);
       }
-      if (struct.isSetAuthor_id()) {
+      if (struct.isSetAuthorId()) {
         optionals.set(7);
       }
-      if (struct.isSetApprove_num()) {
+      if (struct.isSetApproveNum()) {
         optionals.set(8);
       }
       oprot.writeBitSet(optionals, 9);
       if (struct.isSetId()) {
         oprot.writeI32(struct.id);
       }
-      if (struct.isSetPost_id()) {
-        oprot.writeI32(struct.post_id);
+      if (struct.isSetPostId()) {
+        oprot.writeI32(struct.postId);
       }
-      if (struct.isSetParent_id()) {
-        oprot.writeI32(struct.parent_id);
+      if (struct.isSetParentId()) {
+        oprot.writeI32(struct.parentId);
       }
       if (struct.isSetStatus()) {
         oprot.writeI32(struct.status);
@@ -1080,17 +1080,17 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
       if (struct.isSetContent()) {
         oprot.writeString(struct.content);
       }
-      if (struct.isSetCreate_time()) {
-        oprot.writeI32(struct.create_time);
+      if (struct.isSetCreateTime()) {
+        oprot.writeI32(struct.createTime);
       }
-      if (struct.isSetUpdate_time()) {
-        oprot.writeI32(struct.update_time);
+      if (struct.isSetUpdateTime()) {
+        oprot.writeI32(struct.updateTime);
       }
-      if (struct.isSetAuthor_id()) {
-        oprot.writeI32(struct.author_id);
+      if (struct.isSetAuthorId()) {
+        oprot.writeI32(struct.authorId);
       }
-      if (struct.isSetApprove_num()) {
-        oprot.writeI32(struct.approve_num);
+      if (struct.isSetApproveNum()) {
+        oprot.writeI32(struct.approveNum);
       }
     }
 
@@ -1103,12 +1103,12 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         struct.setIdIsSet(true);
       }
       if (incoming.get(1)) {
-        struct.post_id = iprot.readI32();
-        struct.setPost_idIsSet(true);
+        struct.postId = iprot.readI32();
+        struct.setPostIdIsSet(true);
       }
       if (incoming.get(2)) {
-        struct.parent_id = iprot.readI32();
-        struct.setParent_idIsSet(true);
+        struct.parentId = iprot.readI32();
+        struct.setParentIdIsSet(true);
       }
       if (incoming.get(3)) {
         struct.status = iprot.readI32();
@@ -1119,20 +1119,20 @@ public class TComment implements org.apache.thrift.TBase<TComment, TComment._Fie
         struct.setContentIsSet(true);
       }
       if (incoming.get(5)) {
-        struct.create_time = iprot.readI32();
-        struct.setCreate_timeIsSet(true);
+        struct.createTime = iprot.readI32();
+        struct.setCreateTimeIsSet(true);
       }
       if (incoming.get(6)) {
-        struct.update_time = iprot.readI32();
-        struct.setUpdate_timeIsSet(true);
+        struct.updateTime = iprot.readI32();
+        struct.setUpdateTimeIsSet(true);
       }
       if (incoming.get(7)) {
-        struct.author_id = iprot.readI32();
-        struct.setAuthor_idIsSet(true);
+        struct.authorId = iprot.readI32();
+        struct.setAuthorIdIsSet(true);
       }
       if (incoming.get(8)) {
-        struct.approve_num = iprot.readI32();
-        struct.setApprove_numIsSet(true);
+        struct.approveNum = iprot.readI32();
+        struct.setApproveNumIsSet(true);
       }
     }
   }

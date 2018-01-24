@@ -14,8 +14,8 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
   private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
   private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)2);
   private static final org.apache.thrift.protocol.TField FREQUENCY_FIELD_DESC = new org.apache.thrift.protocol.TField("frequency", org.apache.thrift.protocol.TType.I32, (short)3);
-  private static final org.apache.thrift.protocol.TField CREATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("create_time", org.apache.thrift.protocol.TType.I32, (short)4);
-  private static final org.apache.thrift.protocol.TField UPDATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("update_time", org.apache.thrift.protocol.TType.I32, (short)5);
+  private static final org.apache.thrift.protocol.TField CREATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("createTime", org.apache.thrift.protocol.TType.I32, (short)4);
+  private static final org.apache.thrift.protocol.TField UPDATE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("updateTime", org.apache.thrift.protocol.TType.I32, (short)5);
   private static final org.apache.thrift.protocol.TField STATUS_FIELD_DESC = new org.apache.thrift.protocol.TField("status", org.apache.thrift.protocol.TType.I32, (short)6);
 
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new TTagStandardSchemeFactory();
@@ -24,8 +24,8 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
   public int id; // required
   public java.lang.String name; // required
   public int frequency; // required
-  public int create_time; // required
-  public int update_time; // required
+  public int createTime; // required
+  public int updateTime; // required
   public int status; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -33,8 +33,8 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     ID((short)1, "id"),
     NAME((short)2, "name"),
     FREQUENCY((short)3, "frequency"),
-    CREATE_TIME((short)4, "create_time"),
-    UPDATE_TIME((short)5, "update_time"),
+    CREATE_TIME((short)4, "createTime"),
+    UPDATE_TIME((short)5, "updateTime"),
     STATUS((short)6, "status");
 
     private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
@@ -104,8 +104,8 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
   // isset id assignments
   private static final int __ID_ISSET_ID = 0;
   private static final int __FREQUENCY_ISSET_ID = 1;
-  private static final int __CREATE_TIME_ISSET_ID = 2;
-  private static final int __UPDATE_TIME_ISSET_ID = 3;
+  private static final int __CREATETIME_ISSET_ID = 2;
+  private static final int __UPDATETIME_ISSET_ID = 3;
   private static final int __STATUS_ISSET_ID = 4;
   private byte __isset_bitfield = 0;
   public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
@@ -117,9 +117,9 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.FREQUENCY, new org.apache.thrift.meta_data.FieldMetaData("frequency", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.CREATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("create_time", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.CREATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("createTime", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.UPDATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("update_time", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.UPDATE_TIME, new org.apache.thrift.meta_data.FieldMetaData("updateTime", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     tmpMap.put(_Fields.STATUS, new org.apache.thrift.meta_data.FieldMetaData("status", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
@@ -134,8 +134,8 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     int id,
     java.lang.String name,
     int frequency,
-    int create_time,
-    int update_time,
+    int createTime,
+    int updateTime,
     int status)
   {
     this();
@@ -144,10 +144,10 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     this.name = name;
     this.frequency = frequency;
     setFrequencyIsSet(true);
-    this.create_time = create_time;
-    setCreate_timeIsSet(true);
-    this.update_time = update_time;
-    setUpdate_timeIsSet(true);
+    this.createTime = createTime;
+    setCreateTimeIsSet(true);
+    this.updateTime = updateTime;
+    setUpdateTimeIsSet(true);
     this.status = status;
     setStatusIsSet(true);
   }
@@ -162,8 +162,8 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
       this.name = other.name;
     }
     this.frequency = other.frequency;
-    this.create_time = other.create_time;
-    this.update_time = other.update_time;
+    this.createTime = other.createTime;
+    this.updateTime = other.updateTime;
     this.status = other.status;
   }
 
@@ -178,10 +178,10 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     this.name = null;
     setFrequencyIsSet(false);
     this.frequency = 0;
-    setCreate_timeIsSet(false);
-    this.create_time = 0;
-    setUpdate_timeIsSet(false);
-    this.update_time = 0;
+    setCreateTimeIsSet(false);
+    this.createTime = 0;
+    setUpdateTimeIsSet(false);
+    this.updateTime = 0;
     setStatusIsSet(false);
     this.status = 0;
   }
@@ -256,50 +256,50 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __FREQUENCY_ISSET_ID, value);
   }
 
-  public int getCreate_time() {
-    return this.create_time;
+  public int getCreateTime() {
+    return this.createTime;
   }
 
-  public TTag setCreate_time(int create_time) {
-    this.create_time = create_time;
-    setCreate_timeIsSet(true);
+  public TTag setCreateTime(int createTime) {
+    this.createTime = createTime;
+    setCreateTimeIsSet(true);
     return this;
   }
 
-  public void unsetCreate_time() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __CREATE_TIME_ISSET_ID);
+  public void unsetCreateTime() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __CREATETIME_ISSET_ID);
   }
 
-  /** Returns true if field create_time is set (has been assigned a value) and false otherwise */
-  public boolean isSetCreate_time() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __CREATE_TIME_ISSET_ID);
+  /** Returns true if field createTime is set (has been assigned a value) and false otherwise */
+  public boolean isSetCreateTime() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __CREATETIME_ISSET_ID);
   }
 
-  public void setCreate_timeIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __CREATE_TIME_ISSET_ID, value);
+  public void setCreateTimeIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __CREATETIME_ISSET_ID, value);
   }
 
-  public int getUpdate_time() {
-    return this.update_time;
+  public int getUpdateTime() {
+    return this.updateTime;
   }
 
-  public TTag setUpdate_time(int update_time) {
-    this.update_time = update_time;
-    setUpdate_timeIsSet(true);
+  public TTag setUpdateTime(int updateTime) {
+    this.updateTime = updateTime;
+    setUpdateTimeIsSet(true);
     return this;
   }
 
-  public void unsetUpdate_time() {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __UPDATE_TIME_ISSET_ID);
+  public void unsetUpdateTime() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __UPDATETIME_ISSET_ID);
   }
 
-  /** Returns true if field update_time is set (has been assigned a value) and false otherwise */
-  public boolean isSetUpdate_time() {
-    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __UPDATE_TIME_ISSET_ID);
+  /** Returns true if field updateTime is set (has been assigned a value) and false otherwise */
+  public boolean isSetUpdateTime() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __UPDATETIME_ISSET_ID);
   }
 
-  public void setUpdate_timeIsSet(boolean value) {
-    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __UPDATE_TIME_ISSET_ID, value);
+  public void setUpdateTimeIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __UPDATETIME_ISSET_ID, value);
   }
 
   public int getStatus() {
@@ -353,17 +353,17 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
 
     case CREATE_TIME:
       if (value == null) {
-        unsetCreate_time();
+        unsetCreateTime();
       } else {
-        setCreate_time((java.lang.Integer)value);
+        setCreateTime((java.lang.Integer)value);
       }
       break;
 
     case UPDATE_TIME:
       if (value == null) {
-        unsetUpdate_time();
+        unsetUpdateTime();
       } else {
-        setUpdate_time((java.lang.Integer)value);
+        setUpdateTime((java.lang.Integer)value);
       }
       break;
 
@@ -390,10 +390,10 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
       return getFrequency();
 
     case CREATE_TIME:
-      return getCreate_time();
+      return getCreateTime();
 
     case UPDATE_TIME:
-      return getUpdate_time();
+      return getUpdateTime();
 
     case STATUS:
       return getStatus();
@@ -416,9 +416,9 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     case FREQUENCY:
       return isSetFrequency();
     case CREATE_TIME:
-      return isSetCreate_time();
+      return isSetCreateTime();
     case UPDATE_TIME:
-      return isSetUpdate_time();
+      return isSetUpdateTime();
     case STATUS:
       return isSetStatus();
     }
@@ -467,21 +467,21 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
         return false;
     }
 
-    boolean this_present_create_time = true;
-    boolean that_present_create_time = true;
-    if (this_present_create_time || that_present_create_time) {
-      if (!(this_present_create_time && that_present_create_time))
+    boolean this_present_createTime = true;
+    boolean that_present_createTime = true;
+    if (this_present_createTime || that_present_createTime) {
+      if (!(this_present_createTime && that_present_createTime))
         return false;
-      if (this.create_time != that.create_time)
+      if (this.createTime != that.createTime)
         return false;
     }
 
-    boolean this_present_update_time = true;
-    boolean that_present_update_time = true;
-    if (this_present_update_time || that_present_update_time) {
-      if (!(this_present_update_time && that_present_update_time))
+    boolean this_present_updateTime = true;
+    boolean that_present_updateTime = true;
+    if (this_present_updateTime || that_present_updateTime) {
+      if (!(this_present_updateTime && that_present_updateTime))
         return false;
-      if (this.update_time != that.update_time)
+      if (this.updateTime != that.updateTime)
         return false;
     }
 
@@ -509,9 +509,9 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
 
     hashCode = hashCode * 8191 + frequency;
 
-    hashCode = hashCode * 8191 + create_time;
+    hashCode = hashCode * 8191 + createTime;
 
-    hashCode = hashCode * 8191 + update_time;
+    hashCode = hashCode * 8191 + updateTime;
 
     hashCode = hashCode * 8191 + status;
 
@@ -556,22 +556,22 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetCreate_time()).compareTo(other.isSetCreate_time());
+    lastComparison = java.lang.Boolean.valueOf(isSetCreateTime()).compareTo(other.isSetCreateTime());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetCreate_time()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.create_time, other.create_time);
+    if (isSetCreateTime()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createTime, other.createTime);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.valueOf(isSetUpdate_time()).compareTo(other.isSetUpdate_time());
+    lastComparison = java.lang.Boolean.valueOf(isSetUpdateTime()).compareTo(other.isSetUpdateTime());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetUpdate_time()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.update_time, other.update_time);
+    if (isSetUpdateTime()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.updateTime, other.updateTime);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -622,12 +622,12 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
     sb.append(this.frequency);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("create_time:");
-    sb.append(this.create_time);
+    sb.append("createTime:");
+    sb.append(this.createTime);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("update_time:");
-    sb.append(this.update_time);
+    sb.append("updateTime:");
+    sb.append(this.updateTime);
     first = false;
     if (!first) sb.append(", ");
     sb.append("status:");
@@ -704,16 +704,16 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
             break;
           case 4: // CREATE_TIME
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.create_time = iprot.readI32();
-              struct.setCreate_timeIsSet(true);
+              struct.createTime = iprot.readI32();
+              struct.setCreateTimeIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
           case 5: // UPDATE_TIME
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.update_time = iprot.readI32();
-              struct.setUpdate_timeIsSet(true);
+              struct.updateTime = iprot.readI32();
+              struct.setUpdateTimeIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -753,10 +753,10 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
       oprot.writeI32(struct.frequency);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(CREATE_TIME_FIELD_DESC);
-      oprot.writeI32(struct.create_time);
+      oprot.writeI32(struct.createTime);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(UPDATE_TIME_FIELD_DESC);
-      oprot.writeI32(struct.update_time);
+      oprot.writeI32(struct.updateTime);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(STATUS_FIELD_DESC);
       oprot.writeI32(struct.status);
@@ -788,10 +788,10 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
       if (struct.isSetFrequency()) {
         optionals.set(2);
       }
-      if (struct.isSetCreate_time()) {
+      if (struct.isSetCreateTime()) {
         optionals.set(3);
       }
-      if (struct.isSetUpdate_time()) {
+      if (struct.isSetUpdateTime()) {
         optionals.set(4);
       }
       if (struct.isSetStatus()) {
@@ -807,11 +807,11 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
       if (struct.isSetFrequency()) {
         oprot.writeI32(struct.frequency);
       }
-      if (struct.isSetCreate_time()) {
-        oprot.writeI32(struct.create_time);
+      if (struct.isSetCreateTime()) {
+        oprot.writeI32(struct.createTime);
       }
-      if (struct.isSetUpdate_time()) {
-        oprot.writeI32(struct.update_time);
+      if (struct.isSetUpdateTime()) {
+        oprot.writeI32(struct.updateTime);
       }
       if (struct.isSetStatus()) {
         oprot.writeI32(struct.status);
@@ -835,12 +835,12 @@ public class TTag implements org.apache.thrift.TBase<TTag, TTag._Fields>, java.i
         struct.setFrequencyIsSet(true);
       }
       if (incoming.get(3)) {
-        struct.create_time = iprot.readI32();
-        struct.setCreate_timeIsSet(true);
+        struct.createTime = iprot.readI32();
+        struct.setCreateTimeIsSet(true);
       }
       if (incoming.get(4)) {
-        struct.update_time = iprot.readI32();
-        struct.setUpdate_timeIsSet(true);
+        struct.updateTime = iprot.readI32();
+        struct.setUpdateTimeIsSet(true);
       }
       if (incoming.get(5)) {
         struct.status = iprot.readI32();
